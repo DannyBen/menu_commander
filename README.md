@@ -145,6 +145,27 @@ menu:
     branch: git branch
 ```
 
+### Multi-line commands
+
+Providing an array to a menu, will join the array with '&&' to a single
+command. Alternatively, you can use a simple YAML multi-line string.
+
+
+```yaml
+# examples/multiline.yml
+menu:
+  deploy:
+    - run tests
+    - git commit -am "automatic commit"
+    - git push
+
+  alternative: >
+    run tests &&
+    git commit -am "automatic commit" &&
+    git push
+```
+
+
 Menu File Location
 --------------------------------------------------
 

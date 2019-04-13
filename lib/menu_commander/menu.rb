@@ -13,6 +13,8 @@ module MenuCommander
     def call(menu = nil)
       menu ||= config['menu']
       response = select menu
+      response = response.join ' && ' if response.is_a? Array
+      
       if response.is_a? String
         params = {}
         placeholders(response).each do |key|
@@ -22,6 +24,7 @@ module MenuCommander
         response % params
       else
         call response
+
       end
     end
 
