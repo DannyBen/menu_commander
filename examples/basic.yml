@@ -1,4 +1,4 @@
-# Basic Example
+# examples/basic.yml
 
 # Using %{variables} in a command will prompt for an input when executed
 menu:

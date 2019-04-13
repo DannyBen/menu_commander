@@ -1,4 +1,5 @@
-# Menu Example
+# examples/menu.yml
+
 # The "menu.yml" file is the default that will be loaded if no filename
 # is provided.
 menu:

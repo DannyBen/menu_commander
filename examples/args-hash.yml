@@ -1,4 +1,5 @@
 # examples/args-hash.yml
+
 menu: 
   server: rails server --env %{environment}
   test: RAILS_ENV=%{environment} rspec

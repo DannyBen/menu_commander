@@ -1,6 +1,6 @@
 # examples/nested.yml
-# You can nest as many menu levels as you wish under the menu definition.
 
+# You can nest as many menu levels as you wish under the menu definition.
 menu:
   docker:
     images: docker images ls

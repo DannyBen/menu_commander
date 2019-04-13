@@ -1,4 +1,5 @@
-# Minimal Example
+# examples/minimal.yml
+
 # The only requirement for a minimal menu is to have a "menu" definition
 # with key: command to run
 menu:
