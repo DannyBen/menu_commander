@@ -1,19 +1,11 @@
+# Menu Example
+# The "menu.yml" file is the default that will be loaded if no filename
+# is provided.
 menu:
-  info:
-    whoami: whoami
-    cat: cat %{file}
-    ls:
-      gems: ls /vagrant/gems
-      rails: ls /vagrant/rails
-
-  build: echo building
-  deploy:
-    production: echo deploying to prod %{app} %{comment}
-    staging: echo deploying to stage %{app} %{comment}
+  hello: echo The message is %{message}
+  hi: echo hi %{name}
 
 args:
-  app:
-  - protocol
-  - playlist
-
-  file: ls /vagrant/rails/protocol/config/*.yml
+  name:
+  - Harry
+  - Lloyd

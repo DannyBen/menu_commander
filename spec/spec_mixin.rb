@@ -46,7 +46,9 @@ module SpecMixin
     if args.any?
       stdin_send(*args) { yield }
     else
+      # :nocov:
       yield
+      # :nocov:
     end
   end
 

@@ -1,0 +1,14 @@
+# examples/nested.yml
+# You can nest as many menu levels as you wish under the menu definition.
+
+menu:
+  docker:
+    images: docker images ls
+    containers: docker ps -a
+    stack:
+      deploy: docker stack deploy -c docker-compose.yml mystack
+      list: docker stack ls
+
+  git:
+    status: git status
+    branch: git branch

@@ -1,0 +1,9 @@
+# examples/args-free-text.yml
+# When a variable exists with no corresponding definition in the args 
+# section, a free text input will be provided. 
+menu:
+  release: 
+    echo %{version} > version.txt &&
+    git tag v%{version}
+
+

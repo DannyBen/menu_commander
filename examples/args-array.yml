@@ -1,0 +1,10 @@
+# examples/args-array.yml
+menu:
+  server: rails server --env %{environment}
+  test: RAILS_ENV=%{environment} rspec
+
+# Using an array as the argument definition, will simply generate a menu
+args:
+  environment:
+    - staging
+    - production

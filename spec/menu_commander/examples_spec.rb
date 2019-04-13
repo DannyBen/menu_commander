@@ -9,17 +9,17 @@ describe 'examples' do
     Dir.chdir 'examples' do
       tests.each do |spec|
         command = spec[:cmd]
-        keyboard = spec[:kbd] || ''
+        keyboard = spec[:kbd] || []
 
         test_name = "#{command} (#{keyboard.join ' '})"
         test_name = "no-arguments" if test_name.empty?
 
         say "$ !txtpur!menu #{test_name}"
 
-        fixture = test_name.gsub(/[^#\w\- \(\)\{\}\[\]]/, '')
+        fixture = test_name.gsub(/[^#\w\- \(\)\{\}\[\]]/, '').strip
 
         allow_any_instance_of(Command).to receive(:exec) do |obj|
-          puts "STUBBED: exec #{obj.command}"
+          say "!txtred!> stubbed!txtrst!: #{obj.command}"
         end
 
         argv = command.split ' '

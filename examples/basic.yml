@@ -1,7 +1,11 @@
+# Basic Example
+
+# Using %{variables} in a command will prompt for an input when executed
 menu:
   hello: echo hello
   hi: echo hi %{name}
 
+# Define sub menus for any %{variable} that was defined in the command
 args:
   name:
   - Harry

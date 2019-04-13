@@ -53,8 +53,10 @@ module MenuCommander
     def ask(title)
       prompt.ask "> #{title}:"
     rescue TTY::Reader::InputInterrupt
+      # :nocov:
       puts "\nGoodbye"
       exit
+      # :nocov:
     end
 
     def select(options, title = nil)
@@ -63,8 +65,10 @@ module MenuCommander
       menu_config['filter'] = true if options.size > 10
       prompt.select title, options, menu_config
     rescue TTY::Reader::InputInterrupt
+      # :nocov:
       puts "\nGoodbye"
       exit
+      # :nocov:
     end
   end
 end

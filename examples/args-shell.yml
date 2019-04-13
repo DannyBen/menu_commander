@@ -1,0 +1,10 @@
+# Args Shell Example
+menu:
+  show: cat %{file}
+  edit: vi %{file}
+
+# Define how to obtain arguments
+# Using a string value for the argument definition will execute the string
+# as a shell command, and use the output (newline delimited) as the menu
+args:
+  file: ls 

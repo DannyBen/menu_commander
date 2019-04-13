@@ -1,0 +1,10 @@
+# examples/args-hash.yml
+menu: 
+  server: rails server --env %{environment}
+  test: RAILS_ENV=%{environment} rspec
+
+# Using a hash is similar to using an array, only with different menu options
+args:
+  environment:
+    Staging Environment: staging
+    Production Environment: production
