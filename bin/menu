@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require 'menu_commander'
+require 'colsole'
+include Colsole
+
+router = MenuCommander::CLI.router
+
+begin
+  exit router.run ARGV
+rescue => e
+  puts e.backtrace.reverse if ENV['DEBUG']
+  say! "!txtred!#{e.class}: #{e.message}"
+  exit 1
+end

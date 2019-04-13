@@ -1,0 +1,19 @@
+menu:
+  info:
+    whoami: whoami
+    cat: cat %{file}
+    ls:
+      gems: ls /vagrant/gems
+      rails: ls /vagrant/rails
+
+  build: echo building
+  deploy:
+    production: echo deploying to prod %{app} %{comment}
+    staging: echo deploying to stage %{app} %{comment}
+
+args:
+  app:
+  - protocol
+  - playlist
+
+  file: ls /vagrant/rails/protocol/config/*.yml
