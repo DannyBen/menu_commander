@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = MenuCommander::VERSION
   s.date        = Date.today.to_s
   s.summary     = "Create menus for any CLI tool"
-  s.description = "Generate menus for any CLI tools using simple YAML configuration files"
+  s.description = "Easily create menus for any command line tool using simple YAML configuration"
   s.authors     = ["Danny Ben Shitrit"]
   s.email       = 'db@dannyben.com'
   s.files       = Dir['README.md', 'lib/**/*.*']
