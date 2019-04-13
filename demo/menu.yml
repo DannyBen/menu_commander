@@ -1,0 +1,8 @@
+menu:
+  hello: echo hello
+  hi: echo hi %{name}
+
+args:
+  name:
+  - Harry
+  - Lloyd
