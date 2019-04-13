@@ -47,7 +47,7 @@ Running it, looks like this:
 ![Demo](/demo/demo.gif)
 
 
-Features
+Menu Configuration Features
 --------------------------------------------------
 
 All features have an example configuration in the
@@ -144,4 +144,22 @@ menu:
     status: git status
     branch: git branch
 ```
+
+Menu File Location
+--------------------------------------------------
+
+By default, menu files are looked for in the current working directory. 
+
+You may instruct Menu Commander to look in additional locations by setting
+the `MENU_PATH` environment variable to one or more paths. Note that when
+using this method, Menu Commander will *not* look in the current directory, 
+unless you include it in `MENU_PATH`, like this:
+
+```shell
+$ export MENU_PATH=.:$HOME/menus:/etc/menus
+```
+
+If you wish this setting to be permanent, add it to your `.bashrc` or your 
+preferred initialization script.
+
 
