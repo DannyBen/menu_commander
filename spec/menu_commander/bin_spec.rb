@@ -1,6 +1,18 @@
 require 'spec_helper'
 
 describe 'bin/menu' do
+  describe '--version' do
+    it "shows version" do
+      expect(`bin/menu --version`).to match_fixture('cli/version')
+    end
+  end
+
+  describe '--help' do
+    it "shows usage" do
+      expect(`bin/menu --help`).to match_fixture('cli/help')
+    end
+  end
+
   context "when calling an invalid menu config" do
     after { ENV['MENU_PATH'] = nil }
 

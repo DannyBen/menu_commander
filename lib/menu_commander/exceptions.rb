@@ -1,6 +1,7 @@
 module MenuCommander
   class Error < StandardError; end
   class Interrupt < Interrupt; end
+  class Exit < SystemExit; end
   
   class MenuNotFound < Error
     # :nocov: - covered by external process

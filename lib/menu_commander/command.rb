@@ -5,13 +5,15 @@ module MenuCommander
   class Command < MisterBin::Command
     include Colsole
 
-    help "Execute the menu"
+    help "Menu Commander"
     usage "menu [CONFIG --dry]"
-    usage "menu (-h|--help)"
-    option "-d --dry", "Dry run. Do not execute the command at the end, just show it."
+    usage "menu (-h|--help|--version)"
+    option "-d --dry", "Dry run - do not execute the command at the end, just show it"
+    option "--version", "Show version number"
     param "CONFIG", "The name of the menu config file without the .yml extension [default: menu]"
 
     def run
+      raise Exit, VERSION if args['--version'] 
       raise MenuNotFound.new(paths: menu_paths, config: config) unless menu_file
 
       if args['--dry']

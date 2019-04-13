@@ -1,0 +1,19 @@
+Menu Commander
+
+Usage:
+  menu [CONFIG --dry]
+  menu (-h|--help|--version)
+
+Options:
+  -d --dry
+    Dry run - do not execute the command at the end, just show it
+
+  --version
+    Show version number
+
+  -h --help
+    Show this help
+
+Parameters:
+  CONFIG
+    The name of the menu config file without the .yml extension [default: menu]

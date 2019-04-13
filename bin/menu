@@ -12,6 +12,10 @@ rescue MenuCommander::Interrupt => e
   say! "\n#{e.message}"
   exit 0
 
+rescue MenuCommander::Exit => e
+  say "#{e.message}" if e.message
+  exit 0
+
 rescue MenuCommander::MenuNotFound => e
   say! "#{e.message}"
   if e.paths and e.config
