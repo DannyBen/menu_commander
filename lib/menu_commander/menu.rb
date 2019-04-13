@@ -36,14 +36,13 @@ module MenuCommander
     end
 
     def get_user_response(key)
-      opts = args ? args[key] : nil
-      opts = opts.is_a?(String) ? `#{opts}`.split("\n") : opts
+      opts = get_opts key
+      opts ? select(opts, key) : ask(key)
+    end
 
-      if opts
-        opts.size == 1 ? opts[0] : select(opts, key)
-      else
-        ask(key)
-      end    
+    def get_opts(key)
+      opts = args ? args[key] : nil
+      opts.is_a?(String) ? `#{opts}`.split("\n") : opts
     end
 
     def prompt
@@ -52,11 +51,13 @@ module MenuCommander
 
     def ask(title)
       prompt.ask "> #{title}:"
+
     rescue TTY::Reader::InputInterrupt
       # :nocov:
       puts "\nGoodbye"
       exit
       # :nocov:
+
     end
 
     def select(options, title = nil)
@@ -64,11 +65,13 @@ module MenuCommander
       menu_config = { marker: '>', per_page: 10 }
       menu_config['filter'] = true if options.size > 10
       prompt.select title, options, menu_config
+
     rescue TTY::Reader::InputInterrupt
       # :nocov:
       puts "\nGoodbye"
       exit
       # :nocov:
+
     end
   end
 end
