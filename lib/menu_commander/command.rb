@@ -12,7 +12,7 @@ module MenuCommander
     param "CONFIG", "The name of the menu config file without the .yml extension [default: menu]"
 
     def run
-      raise MenuNotFound unless File.exist? menu_file
+      raise MenuNotFound.new(paths: menu_paths, config: config) unless menu_file
 
       if args['--dry']
         say "$ !txtpur!#{command}"
@@ -32,12 +32,27 @@ module MenuCommander
   private
 
     def menu_file
-      "#{config}.yml"
+      @menu_file ||= menu_file!
+    end
+
+    def menu_file!
+      menu_paths.each do |dir|
+        file = "#{dir}/#{config}.yml"
+        return file if File.exist? file
+      end
+      nil
+    end
+
+    def menu_paths
+      menu_env_path.split File::PATH_SEPARATOR
+    end
+
+    def menu_env_path
+      ENV['MENU_PATH'] || '.'
     end
 
     def config
       config = args['CONFIG'] || 'menu'
     end
-
   end
 end

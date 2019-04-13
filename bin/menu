@@ -13,7 +13,19 @@ rescue MenuCommander::Interrupt => e
   exit 0
 
 rescue MenuCommander::MenuNotFound => e
-  say! "!txtred!#{e.message}"
+  say! "#{e.message}"
+  if e.paths and e.config
+    message = "Looked for !txtgrn!#{e.config}.yml!txtrst! in"
+    if e.paths.size == 1
+      message += " !txtgrn!#{e.paths.first}"
+      say! message
+    else
+      say! message
+      e.paths.each do |path|
+        say! "- !txtgrn!#{path}"
+      end
+    end
+  end
   exit 1
 
 rescue => e
