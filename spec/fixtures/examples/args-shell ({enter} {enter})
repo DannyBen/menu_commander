@@ -1,7 +1,7 @@
-[?25l> [90m(Use arrow keys, press Enter to select)[0m
+[?25l> [90m(Use arrow keys, press Enter to select, and letter keys to filter)[0m
 [32m> show[0m
   edit[2K[1G[1A[2K[1G[1A[2K[1G> [32mshow[0m
-[?25h[?25l> file: [90m(Use arrow keys, press Enter to select)[0m
+[?25h[?25l> file: [90m(Use arrow keys, press Enter to select, and letter keys to filter)[0m
 [32m> args-array.yml[0m
   args-free-text.yml
   args-hash.yml
@@ -9,5 +9,5 @@
   basic.yml
   menu.yml
   minimal.yml
-  nested.yml[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G> file: [32margs-array.yml[0m
+  nested.yml[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G> file: [32margs-array.yml[0m
 [?25h[0;31m> stubbed[0m: cat args-array.yml

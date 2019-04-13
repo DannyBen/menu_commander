@@ -61,9 +61,7 @@ module MenuCommander
 
     def select(options, title = nil)
       title = title ? "> #{title}:" : ">"
-      menu_config = { marker: '>', per_page: 10 }
-      menu_config['filter'] = true if options.size > 10
-      prompt.select title, options, menu_config
+      prompt.select title, options, marker: '>', per_page: 10, filter: true
 
     rescue TTY::Reader::InputInterrupt
       # :nocov:

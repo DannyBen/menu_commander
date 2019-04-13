@@ -1,7 +1,7 @@
-[?25l> [90m(Use arrow keys, press Enter to select)[0m
+[?25l> [90m(Use arrow keys, press Enter to select, and letter keys to filter)[0m
 [32m> server[0m
   test[2K[1G[1A[2K[1G[1A[2K[1G> [32mserver[0m
-[?25h[?25l> environment: [90m(Use arrow keys, press Enter to select)[0m
+[?25h[?25l> environment: [90m(Use arrow keys, press Enter to select, and letter keys to filter)[0m
 [32m> Staging Environment[0m
-  Production Environment[2K[1G[1A[2K[1G[1A[2K[1G> environment: [32mStaging Environment[0m
+  Production Environment[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G> environment: [32mStaging Environment[0m
 [?25h[0;31m> stubbed[0m: rails server --env staging
