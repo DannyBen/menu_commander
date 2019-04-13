@@ -7,11 +7,30 @@ router = MenuCommander::CLI.router
 
 begin
   exit router.run ARGV
+
+rescue MenuCommander::Interrupt => e
+  say! "\n#{e.message}"
+  exit 0
+
 rescue MenuCommander::MenuNotFound => e
-  say! "!txtred!#{e.message}"
-  exit 1  
+  say! "#{e.message}"
+  if e.paths and e.config
+    message = "Looked for !txtgrn!#{e.config}.yml!txtrst! in"
+    if e.paths.size == 1
+      message += " !txtgrn!#{e.paths.first}"
+      say! message
+    else
+      say! message
+      e.paths.each do |path|
+        say! "- !txtgrn!#{path}"
+      end
+    end
+  end
+  exit 1
+
 rescue => e
   puts e.backtrace.reverse if ENV['DEBUG']
   say! "!txtred!#{e.class}: #{e.message}"
   exit 1
+
 end

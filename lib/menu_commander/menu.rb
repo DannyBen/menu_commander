@@ -54,8 +54,7 @@ module MenuCommander
 
     rescue TTY::Reader::InputInterrupt
       # :nocov:
-      puts "\nGoodbye"
-      exit
+      raise Interrupt, "Goodbye"
       # :nocov:
 
     end
@@ -68,8 +67,7 @@ module MenuCommander
 
     rescue TTY::Reader::InputInterrupt
       # :nocov:
-      puts "\nGoodbye"
-      exit
+      raise Interrupt, "Goodbye"
       # :nocov:
 
     end
