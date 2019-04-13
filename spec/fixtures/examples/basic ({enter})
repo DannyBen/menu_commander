@@ -1,0 +1,4 @@
+[?25l> [90m(Use arrow keys, press Enter to select)[0m
+[32m> hello[0m
+  hi[2K[1G[1A[2K[1G[1A[2K[1G> [32mhello[0m
+[?25hSTUBBED: exec echo hello

@@ -1,0 +1,9 @@
+[?25l> [90m(Use arrow keys, press Enter to select)[0m
+[32m> hello[0m
+  hi[2K[1G[1A[2K[1G[1A[2K[1G> 
+  hello
+[32m> hi[0m[2K[1G[1A[2K[1G[1A[2K[1G> [32mhi[0m
+[?25h[?25l> name: [90m(Use arrow keys, press Enter to select)[0m
+[32m> Harry[0m
+  Lloyd[2K[1G[1A[2K[1G[1A[2K[1G> name: [32mHarry[0m
+[?25hSTUBBED: exec echo hi Harry

@@ -12,18 +12,21 @@ module MenuCommander
     param "CONFIG", "The name of the menu config file without the .yml extension [default: menu]"
 
     def run
-      dry = args['--dry']
-
       raise MenuNotFound unless File.exist? menu_file
 
-      menu = Menu.new menu_file
-      command = menu.call
-      
-      if dry
+      if args['--dry']
         say "$ !txtpur!#{command}"
       else
         exec command
       end
+    end
+
+    def menu
+      @menu ||= Menu.new menu_file
+    end
+
+    def command
+      @command ||= menu.call
     end
 
   private

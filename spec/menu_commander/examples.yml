@@ -1,0 +1,10 @@
+:tests:
+- :cmd: "basic"
+  :kbd: ['%{enter}']
+
+- :cmd: basic --dry
+  :kbd: ["%{enter}"]
+
+- :cmd: basic
+  :kbd: ["%{down}", "%{enter}", "%{enter}"]
+
