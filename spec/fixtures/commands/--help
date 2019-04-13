@@ -1,0 +1,16 @@
+Execute the menu
+
+Usage:
+  menu [CONFIG --dry]
+  menu (-h|--help)
+
+Options:
+  -d --dry
+    Dry run. Do not execute the command at the end, just show it.
+
+  -h --help
+    Show this help
+
+Parameters:
+  CONFIG
+    The name of the menu config file without the .yml extension [default: menu]

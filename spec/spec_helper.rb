@@ -12,4 +12,5 @@ require_relative 'spec_mixin'
 
 RSpec.configure do |c|
   c.include SpecMixin
+  c.include Colsole
 end
