@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'mister_bin', '~> 0.3'
   s.add_runtime_dependency 'colsole', '~> 0.5'
-  s.add_runtime_dependency 'tty-prompt', '~> 0.18'
+  s.add_runtime_dependency 'tty-prompt', '~> 0.19'
 end
