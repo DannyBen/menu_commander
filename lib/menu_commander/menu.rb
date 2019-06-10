@@ -64,7 +64,7 @@ module MenuCommander
 
     def select(options, title = nil)
       title = title ? "> #{title}:" : ">"
-      prompt.select title, options, marker: '>', per_page: 10, filter: true
+      prompt.select title, options, symbols: { marker: '>' }, per_page: 10, filter: true
 
     rescue TTY::Reader::InputInterrupt
       # :nocov:
