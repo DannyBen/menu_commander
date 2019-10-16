@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'bin/menu' do
   describe '--version' do
     it "shows version" do
-      expect(`bin/menu --version`).to match_fixture('cli/version')
+      expect(`bin/menu --version`).to eq "#{VERSION}\n"
     end
   end
 
