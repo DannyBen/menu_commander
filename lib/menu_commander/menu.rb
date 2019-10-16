@@ -10,25 +10,28 @@ module MenuCommander
       @config = config
     end
 
-    def call(menu = nil)
+    def call(menu=nil)
       menu ||= config['menu']
       response = select menu
-      response = response.join ' && ' if response.is_a? Array
+      response = combine_commands response if response.is_a? Array
       
-      if response.is_a? String
-        params = {}
-        placeholders(response).each do |key|
-          params[key.to_sym] = get_user_response key
-        end
-
-        response % params
-      else
-        call response
-
-      end
+      response.is_a?(String) ? evaluate(response) : call(response)
     end
 
   private
+
+    def combine_commands(command_array)
+      command_array.map { |cmd| "(#{cmd})" }.join ' && ' 
+    end
+
+    def evaluate(response)
+      params = {}
+      placeholders(response).each do |key|
+        params[key.to_sym] = get_user_response key
+      end
+
+      response % params
+    end
 
     def placeholders(template)
       template.scan(/%{([^}]+)}/).flatten.uniq
@@ -40,7 +43,22 @@ module MenuCommander
 
     def get_user_response(key)
       opts = get_opts key
-      opts ? select(opts, key) : ask(key)
+      opts_type = get_opts_type opts
+
+      case opts_type
+      when :free_text
+        ask(key)
+      when :static
+        opts.first
+      when :menu
+        select(opts, key)
+      end
+    end
+
+    def get_opts_type(opts)
+      return :free_text if !opts
+      return :static if opts.is_a? Array and opts.size == 1
+      :menu
     end
 
     def get_opts(key)
@@ -62,7 +80,7 @@ module MenuCommander
 
     end
 
-    def select(options, title = nil)
+    def select(options, title=nil)
       title = title ? "> #{title}:" : ">"
       prompt.select title, options, symbols: { marker: '>' }, per_page: 10, filter: true
 

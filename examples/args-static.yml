@@ -1,0 +1,11 @@
+# examples/args-static.yml
+
+menu:
+  "Show Files": ssh %{server} ls
+  "Reboot": ssh %{server} reboot
+
+# Using an array with exactly one argument will NOT prompt the user for input
+# and instead, use the only possible value.
+args:
+  server:
+  - localhost

@@ -14,8 +14,9 @@ Easily create menus for any command line tool using simple YAML configuration.
 Installation
 --------------------------------------------------
 
-    $ gem install menu_commander
-
+```shell
+$ gem install menu_commander
+```
 
 
 Usage
@@ -42,7 +43,16 @@ args:
   - Lloyd
 ```
 
-Running it, looks like this:
+Then, start the menu by running:
+
+```shell
+# Start the menu with ./menu.yml
+$ menu
+
+# Start the menu with ./some-other-file.yml
+$ menu some-other-file
+```
+
 
 ![Demo](/demo/demo.gif)
 
@@ -82,6 +92,26 @@ args:
   environment:
     - staging
     - production
+```
+
+In case the argument array contains only one array element for a given 
+variable, it will be automatically used without prompting the user.
+
+This is useful when you need to define variables that repeat multiple times
+in your menu.
+
+```yaml
+# examples/args-static.yml
+
+menu:
+  "Show Files": ssh %{server} ls
+  "Reboot": ssh %{server} reboot
+
+# Using an array with exactly one argument will NOT prompt the user for input
+# and instead, use the only possible value.
+args:
+  server:
+  - localhost
 ```
 
 Using `key: value` pairs in the `args` menu will create a sub-menu with 

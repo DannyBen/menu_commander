@@ -8,6 +8,7 @@ describe 'examples' do
     tests = YAML.load_file('spec/menu_commander/examples.yml')[:tests]
     Dir.chdir 'examples' do
       tests.each do |spec|
+
         command = spec[:cmd]
         keyboard = spec[:kbd] || []
 

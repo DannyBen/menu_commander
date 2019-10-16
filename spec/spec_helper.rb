@@ -14,3 +14,5 @@ RSpec.configure do |c|
   c.include SpecMixin
   c.include Colsole
 end
+
+ENV['TTY'] = 'on'

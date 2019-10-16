@@ -32,6 +32,9 @@
 - :cmd: 'args-shell'
   :kbd: ["%{enter}", "%{enter}"]
 
+- :cmd: 'args-static'
+  :kbd: ["%{enter}"]
+
 - :cmd: 'multiline'
   :kbd: ["%{enter}"]
 
