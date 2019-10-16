@@ -6,9 +6,10 @@
   args-free-text.yml
   args-hash.yml
   args-shell.yml
+  args-static.yml
   basic.yml
   menu.yml
   minimal.yml
   multiline.yml
-  nested.yml[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G> file: [32margs-array.yml[0m
+  nested.yml[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G> file: [32margs-array.yml[0m
 [?25h[0;31m> stubbed[0m: cat args-array.yml

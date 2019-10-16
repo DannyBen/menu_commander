@@ -43,7 +43,15 @@ module MenuCommander
 
     def get_user_response(key)
       opts = get_opts key
-      opts ? select(opts, key) : ask(key)
+      if opts
+        if opts.is_a? Array and opts.size == 1
+          opts.first
+        else
+          select(opts, key)
+        end
+      else
+        ask(key)
+      end
     end
 
     def get_opts(key)
