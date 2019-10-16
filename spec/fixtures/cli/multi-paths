@@ -1,4 +1,4 @@
 Could not find menu configuration file
-Looked for nomenu.yml in
-- /some/imaginary/folder
-- /another/folder
+Looked for [0;32mnomenu.yml[0m in
+- [0;32m/some/imaginary/folder[0m
+- [0;32m/another/folder[0m
