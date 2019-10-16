@@ -43,15 +43,22 @@ module MenuCommander
 
     def get_user_response(key)
       opts = get_opts key
-      if opts
-        if opts.is_a? Array and opts.size == 1
-          opts.first
-        else
-          select(opts, key)
-        end
-      else
+      opts_type = get_opts_type opts
+
+      case opts_type
+      when :free_text
         ask(key)
+      when :static
+        opts.first
+      when :menu
+        select(opts, key)
       end
+    end
+
+    def get_opts_type(opts)
+      return :free_text if !opts
+      return :static if opts.is_a? Array and opts.size == 1
+      :menu
     end
 
     def get_opts(key)
