@@ -1,0 +1,18 @@
+> (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> hello
+  hi
+  ping> 
+  hello
+> hi
+  ping> 
+  hello
+  hi
+> ping> ping
+> server: (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> example.com
+  localhost
+  google.com> server: 
+  example.com
+> localhost
+  google.com> server: localhost
+> stubbed: ping localhost
