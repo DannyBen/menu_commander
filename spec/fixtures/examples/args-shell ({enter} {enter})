@@ -1,15 +1,15 @@
 > (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
 > show
   edit> show
-> file: (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> file: (Use ↑/↓ and ←/→ arrow keys, press Enter to select, and letter keys to filter)
 > args-array.yml
   args-free-text.yml
   args-hash.yml
   args-shell.yml
   args-static.yml
   basic.yml
+  extend-parent.yml
+  extend.yml
   menu.yml
-  minimal.yml
-  multiline.yml
-  nested.yml> file: args-array.yml
+  minimal.yml> file: args-array.yml
 > stubbed: cat args-array.yml

@@ -1,0 +1,19 @@
+# examples/extend.yml
+
+# Use the `extends` key to include one or more additional YAML files.
+# In this example, both the `menu` and the `server` properties will have
+# additional options defined in the `extend-parent.yml` file.
+extends: extend-parent.yml
+
+menu:
+  hello: echo hello
+  hi: echo hi %{name}
+
+args:
+  name:
+  - Harry
+  - Lloyd
+
+  server:
+  - example.com
+

@@ -1,0 +1,9 @@
+# examples/extend-parent.yml
+
+menu:
+  ping: ping %{server}
+
+args:
+  server:
+  - localhost
+  - google.com

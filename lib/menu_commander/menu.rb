@@ -1,4 +1,5 @@
 require 'yaml'
+require 'yaml_extend'
 require 'tty/prompt'
 
 module MenuCommander
@@ -6,7 +7,7 @@ module MenuCommander
     attr_reader :config
 
     def initialize(config)
-      config = YAML.load_file config if config.is_a? String
+      config = YAML.ext_load_file config if config.is_a? String
       @config = config
     end
 

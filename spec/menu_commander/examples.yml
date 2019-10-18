@@ -44,3 +44,6 @@
 - :cmd: 'multiline'
   :kbd: ["%{down}", "%{enter}"]
 
+- :cmd: 'extend'
+  :kbd: ["%{down}%{down}", "%{down}"]
+
