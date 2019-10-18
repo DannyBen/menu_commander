@@ -11,6 +11,20 @@ Easily create menus for any command line tool using simple YAML configuration.
 
 ---
 
+* [Installation](#installation)
+* [Usage](#usage)
+* [Menu Configuration Features](#menu-configuration-features)
+   * [Minimal menu requirements](#minimal-menu-requirements)
+   * [Argument sub-menus](#argument-sub-menus)
+   * [Free text input](#free-text-input)
+   * [Nested menus](#nested-menus)
+   * [Header text](#header-text)
+   * [Split menu into several files](#split-menu-into-several-files)
+   * [Multi-line commands](#multi-line-commands)
+* [Menu File Location](#menu-file-location)
+
+---
+
 Installation
 --------------------------------------------------
 
@@ -71,11 +85,12 @@ The only requirement for a minimal menu is to have a `menu` definition
 with `key: command` to run.
 
 ```yaml
-# examples/minimal.yml
 menu:
   hello: echo hello
   whoami: whoami
 ```
+
+> See: [examples/minimal.yml](examples/minimal.yml)
 
 ### Argument sub-menus
 
@@ -83,7 +98,6 @@ Using `%{variables}` in a command will prompt for an input when executed. The
 sub-menu for that input is specified in the `args` definition.
 
 ```yaml
-# examples/args-array.yml
 menu:
   server: rails server --env %{environment}
   test: RAILS_ENV=%{environment} rspec
@@ -94,6 +108,8 @@ args:
     - production
 ```
 
+> See: [examples/args-array.yml](examples/args-array.yml)
+
 In case the argument array contains only one array element for a given 
 variable, it will be automatically used without prompting the user.
 
@@ -101,24 +117,16 @@ This is useful when you need to define variables that repeat multiple times
 in your menu.
 
 ```yaml
-# examples/args-static.yml
-
-menu:
-  "Show Files": ssh %{server} ls
-  "Reboot": ssh %{server} reboot
-
-# Using an array with exactly one argument will NOT prompt the user for input
-# and instead, use the only possible value.
 args:
-  server:
-  - localhost
+  server: [localhost]
 ```
+
+> See: [examples/args-static.yml](examples/args-static.yml)
 
 Using `key: value` pairs in the `args` menu will create a sub-menu with 
 labels that are different from their substituted value:
 
 ```yaml
-# examples/args-hash.yml
 menu: 
   server: rails server --env %{environment}
   test: RAILS_ENV=%{environment} rspec
@@ -129,12 +137,13 @@ args:
     Production Environment: production
 ```
 
+> See: [examples/args-hash.yml](examples/args-hash.yml)
+
 In order to obtain the sub-menu items from a shell command, simply provide
 the command to run, instead of providing the menu options. The command is
 expected to provide newline-delimited output.
 
 ```yaml
-# examples/args-shell.yml
 menu:
   show: cat %{file}
   edit: vi %{file}
@@ -143,25 +152,27 @@ args:
   file: ls 
 ```
 
+> See: [examples/args-shell.yml](examples/args-shell.yml)
+
 ### Free text input
 
 When using a `%{variable}` that does not have a corresponding definition in
 the `args` section, you will simply be prompted for a free text input:
 
 ```yaml
-# examples/args-free-text.yml
 menu:
   release: 
     echo %{version} > version.txt &&
     git tag v%{version}
 ```
 
+> See: [examples/args-free-text.yml](examples/args-free-text.yml)
+
 ### Nested menus
 
 You can nest as many menu levels as you wish under the menu definition.
 
 ```yaml
-# examples/nested.yml
 menu:
   docker:
     images: docker images ls
@@ -174,6 +185,22 @@ menu:
     status: git status
     branch: git branch
 ```
+
+> See: [examples/args-nested.yml](examples/args-nested.yml)
+
+
+### Header text
+
+Use the `header` option to display a sentence or a multi-line paragraph when
+the menu is started. The header string supports [colsole color markers][1]:
+
+```yaml
+header: |-
+  Welcome to this !txtgrn!basic menu
+  !bldred!Multiline!txtrst! headers are allowed
+```
+
+> See: [examples/header.yml](examples/header.yml)
 
 
 ### Split menu into several files
@@ -201,6 +228,8 @@ args:
   server: [example.com]
 ```
 
+> See: [examples/extend.yml](examples/extend.yml)
+
 The below configuration will be merged into the above menu:
 
 ```yaml
@@ -212,6 +241,8 @@ args:
   server: [localhost, google.com]
 ```
 
+> See: [examples/extend-parent.yml](examples/extend-parent.yml)
+
 
 ### Multi-line commands
 
@@ -220,7 +251,6 @@ command. Alternatively, you can use a simple YAML multi-line string.
 
 
 ```yaml
-# examples/multiline.yml
 menu:
   deploy:
     - run tests
@@ -232,6 +262,8 @@ menu:
     git commit -am "automatic commit" &&
     git push
 ```
+
+> See: [examples/multiline.yml](examples/multiline.yml)
 
 
 Menu File Location
@@ -252,3 +284,4 @@ If you wish this setting to be permanent, add it to your `.bashrc` or your
 preferred initialization script.
 
 
+[1]: https://github.com/dannyben/colsole#color-codes

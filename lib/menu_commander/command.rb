@@ -23,6 +23,8 @@ module MenuCommander
       raise Exit, VERSION if args['--version'] 
       raise MenuNotFound.new(paths: menu_paths, config: config) unless menu_file
 
+      say "#{menu.header}\n" if menu.header
+
       if args['--loop']
         run_looped_menu
       else
