@@ -16,3 +16,4 @@ RSpec.configure do |c|
 end
 
 ENV['TTY'] = 'on'
+ENV['MENU_COMMANDER_ENV'] = 'test'
