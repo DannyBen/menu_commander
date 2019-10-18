@@ -20,8 +20,8 @@ module MenuCommander
     attr_reader :last_command
 
     def run
-      raise Exit, VERSION if args['--version'] 
-      raise MenuNotFound.new(paths: menu_paths, config: config) unless menu_file
+      verify_sanity
+      say "#{menu.header}\n" if menu.header
 
       if args['--loop']
         run_looped_menu
@@ -35,6 +35,11 @@ module MenuCommander
     end
 
   private
+
+    def verify_sanity
+      raise Exit, VERSION if args['--version'] 
+      raise MenuNotFound.new(paths: menu_paths, config: config) unless menu_file
+    end
 
     def run_looped_menu
       loop do

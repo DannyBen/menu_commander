@@ -1,0 +1,16 @@
+# examples/header.yml
+
+# Header string to show when starting the menu.
+# Colsole color markers are supported.
+header: |-
+  Welcome to this !txtgrn!basic menu
+  !bldred!Multiline!txtrst! headers are allowed
+
+menu:
+  hello: echo hello
+  hi: echo hi %{name}
+
+args:
+  name:
+  - Harry
+  - Lloyd

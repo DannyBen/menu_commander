@@ -19,6 +19,10 @@ module MenuCommander
       response.is_a?(String) ? evaluate(response) : call(response)
     end
 
+    def header
+      config['header']
+    end
+
   private
 
     def combine_commands(command_array)

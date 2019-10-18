@@ -47,3 +47,6 @@
 - :cmd: 'extend'
   :kbd: ["%{down}%{down}", "%{down}"]
 
+- :cmd: 'header'
+  :kbd: ["%{enter}"]
+
