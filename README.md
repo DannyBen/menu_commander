@@ -175,6 +175,44 @@ menu:
     branch: git branch
 ```
 
+
+### Split menu into several files
+
+Each menu configuration file can include any number of additional YAML
+files inside it. This is useful when:
+
+- Your menu configuration file becomes too long, and you wish to split it
+  to separate logical units.
+- You have multiple menu files, and you want to include common configuration
+  in each of them.
+
+This is done by using the `extends` option:
+
+```yaml
+# examples/extend.yml
+extends: extend-parent.yml
+
+menu:
+  hello: echo hello
+  hi: echo hi %{name}
+
+args:
+  name: [Harry, Lloyd]
+  server: [example.com]
+```
+
+The below configuration will be merged into the above menu:
+
+```yaml
+# examples/extend-parent.yml
+menu:
+  ping: ping %{server}
+
+args:
+  server: [localhost, google.com]
+```
+
+
 ### Multi-line commands
 
 Providing an array to a menu, will join the array with '&&' to a single
