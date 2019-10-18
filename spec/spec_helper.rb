@@ -15,5 +15,5 @@ RSpec.configure do |c|
   c.include Colsole
 end
 
-ENV['TTY'] = 'on'
+ENV['TTY'] = 'off'
 ENV['MENU_COMMANDER_ENV'] = 'test'

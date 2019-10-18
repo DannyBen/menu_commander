@@ -14,4 +14,4 @@
 [?25h[?25l> [90m(Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)[0m
 [32m> deploy[0m
   list[2K[1G[1A[2K[1G[1A[2K[1G> [32mdeploy[0m
-[?25h[0;31m> stubbed[0m: docker stack deploy -c docker-compose.yml mystack
+[?25h> stubbed: docker stack deploy -c docker-compose.yml mystack

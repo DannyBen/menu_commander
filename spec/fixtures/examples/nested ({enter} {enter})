@@ -5,4 +5,4 @@
 [32m> images[0m
   containers
   stack[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G> [32mimages[0m
-[?25h[0;31m> stubbed[0m: docker images ls
+[?25h> stubbed: docker images ls

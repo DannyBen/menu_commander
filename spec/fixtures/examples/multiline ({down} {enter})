@@ -3,5 +3,5 @@
   alternative[2K[1G[1A[2K[1G[1A[2K[1G> 
   deploy
 [32m> alternative[0m[2K[1G[1A[2K[1G[1A[2K[1G> [32malternative[0m
-[?25h[0;31m> stubbed[0m: run tests && git commit -am "automatic commit" && git push
+[?25h> stubbed: run tests && git commit -am "automatic commit" && git push
 
