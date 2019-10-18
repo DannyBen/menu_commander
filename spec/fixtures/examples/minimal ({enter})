@@ -1,4 +1,4 @@
-[?25l> [90m(Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)[0m
-[32m> hello[0m
-  whoami[2K[1G[1A[2K[1G[1A[2K[1G> [32mhello[0m
-[?25h> stubbed: echo hello
+> (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> hello
+  whoami> hello
+> stubbed: echo hello

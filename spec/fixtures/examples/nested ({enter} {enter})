@@ -1,8 +1,8 @@
-[?25l> [90m(Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)[0m
-[32m> docker[0m
-  git[2K[1G[1A[2K[1G[1A[2K[1G> [32mdocker[0m
-[?25h[?25l> [90m(Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)[0m
-[32m> images[0m
+> (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> docker
+  git> docker
+> (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> images
   containers
-  stack[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G> [32mimages[0m
-[?25h> stubbed: docker images ls
+  stack> images
+> stubbed: docker images ls
