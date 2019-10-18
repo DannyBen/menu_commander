@@ -1,5 +1,5 @@
-[?25l> [90m(Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)[0m
-[32m> release[0m[2K[1G[1A[2K[1G> [32mrelease[0m
-[?25h> version: [2K[1G> version: 1[2K[1G> version: 1.[2K[1G> version: 1.2[2K[1G> version: 1.2.[2K[1G> version: 1.2.3[2K[1G> version: 1.2.3
-[1A[2K[1G> version: [32m1.2.3[0m
-[0;31m> stubbed[0m: echo 1.2.3 > version.txt && git tag v1.2.3
+> (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> release> release
+> version: > version: 1> version: 1.> version: 1.2> version: 1.2.> version: 1.2.3> version: 1.2.3
+> version: 1.2.3
+> stubbed: echo 1.2.3 > version.txt && git tag v1.2.3

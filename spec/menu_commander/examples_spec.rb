@@ -19,8 +19,8 @@ describe 'examples' do
 
         fixture = test_name.gsub(/[^#\w\- \(\)\{\}\[\]]/, '').strip
 
-        allow_any_instance_of(Command).to receive(:exec) do |obj|
-          say "!txtred!> stubbed!txtrst!: #{obj.command}"
+        allow_any_instance_of(Command).to receive(:system) do |obj|
+          say "!txtred!> stubbed!txtrst!: #{obj.last_command}"
         end
 
         argv = command.split ' '

@@ -1,12 +1,15 @@
 Menu Commander
 
 Usage:
-  menu [CONFIG --dry]
+  menu [CONFIG --dry --loop]
   menu (-h|--help|--version)
 
 Options:
   -d --dry
     Dry run - do not execute the command at the end, just show it
+
+  -l --loop
+    Reopen the menu after executing the selected command
 
   --version
     Show version number
@@ -17,3 +20,8 @@ Options:
 Parameters:
   CONFIG
     The name of the menu config file without the .yml extension [default: menu]
+
+Examples:
+  menu --dry
+  menu production --loop
+  menu -ld

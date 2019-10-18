@@ -1,25 +1,32 @@
 require 'mister_bin'
-require 'colsole'
 
 module MenuCommander
   class Command < MisterBin::Command
-    include Colsole
-
     help "Menu Commander"
-    usage "menu [CONFIG --dry]"
+
+    usage "menu [CONFIG --dry --loop]"
     usage "menu (-h|--help|--version)"
+
     option "-d --dry", "Dry run - do not execute the command at the end, just show it"
+    option "-l --loop", "Reopen the menu after executing the selected command"
     option "--version", "Show version number"
+
     param "CONFIG", "The name of the menu config file without the .yml extension [default: menu]"
+
+    example "menu --dry"
+    example "menu production --loop"
+    example "menu -ld"
+
+    attr_reader :last_command
 
     def run
       raise Exit, VERSION if args['--version'] 
       raise MenuNotFound.new(paths: menu_paths, config: config) unless menu_file
 
-      if args['--dry']
-        say "$ !txtpur!#{command}"
+      if args['--loop']
+        run_looped_menu
       else
-        exec command
+        run_menu
       end
     end
 
@@ -27,11 +34,26 @@ module MenuCommander
       @menu ||= Menu.new menu_file
     end
 
-    def command
-      @command ||= menu.call
+  private
+
+    def run_looped_menu
+      loop do
+        run_menu
+        say ""
+        break if ENV['MENU_COMMANDER_ENV'] == 'test'
+      end
     end
 
-  private
+    def run_menu
+      command = menu.call
+      @last_command = command
+
+      if args['--dry']
+        say "$ !txtpur!#{command}".strip
+      else
+        system command
+      end
+    end
 
     def menu_file
       @menu_file ||= menu_file!

@@ -1,4 +1,7 @@
 :tests:
+- :cmd: "basic --loop"
+  :kbd: ['%{enter}']
+
 - :cmd: ''
   :kbd: ["%{enter}", "in the bottle"]
 

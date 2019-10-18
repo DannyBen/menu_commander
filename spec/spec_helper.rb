@@ -10,9 +10,11 @@ require 'mister_bin'
 include MenuCommander
 require_relative 'spec_mixin'
 
-RSpec.configure do |c|
-  c.include SpecMixin
-  c.include Colsole
+RSpec.configure do |config|
+  config.include SpecMixin
+  config.include Colsole
+  config.strip_ansi_escape = true
 end
 
 ENV['TTY'] = 'on'
+ENV['MENU_COMMANDER_ENV'] = 'test'
