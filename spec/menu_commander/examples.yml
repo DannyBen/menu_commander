@@ -50,3 +50,6 @@
 - :cmd: 'header'
   :kbd: ["%{enter}"]
 
+- :cmd: 'long'
+  :kbd: ["%{enter}"]
+

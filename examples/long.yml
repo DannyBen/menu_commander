@@ -1,0 +1,17 @@
+# examples/long.yml
+
+# Menus or sub menus with morer than 10 items will have a filter input
+# and pagination
+menu:
+  one: echo one
+  two: echo two
+  three: echo three
+  four: echo four
+  five: echo five
+  six: echo six
+  seven: echo seven
+  eight: echo eight
+  nine: echo nine
+  ten: echo ten
+  eleven: echo eleven
+  twelve: echo twelve

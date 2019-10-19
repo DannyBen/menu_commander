@@ -15,7 +15,7 @@ module MenuCommander
       menu ||= config['menu']
       response = select menu
       response = combine_commands response if response.is_a? Array
-      
+
       response.is_a?(String) ? evaluate(response) : call(response)
     end
 
@@ -80,18 +80,19 @@ module MenuCommander
 
     rescue TTY::Reader::InputInterrupt
       # :nocov:
-      raise Interrupt, "Goodbye"
+      raise ExitMenu
       # :nocov:
 
     end
 
     def select(options, title=nil)
       title = title ? "> #{title}:" : ">"
-      prompt.select title, options, symbols: { marker: '>' }, per_page: 10, filter: true
+      enable_filter = options.size > 10
+      prompt.select title, options, symbols: { marker: '>' }, per_page: 10, filter: enable_filter
 
     rescue TTY::Reader::InputInterrupt
       # :nocov:
-      raise Interrupt, "Goodbye"
+      raise ExitMenu
       # :nocov:
 
     end
