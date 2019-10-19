@@ -1,7 +1,7 @@
-> (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> (Use ↑/↓ arrow keys, press Enter to select)
 > show
   edit> show
-> file: (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+> file: (Use ↑/↓ arrow keys, press Enter to select)
 > fixtures
   menu_commander
   spec_helper.rb
