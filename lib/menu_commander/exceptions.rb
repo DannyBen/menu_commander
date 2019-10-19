@@ -7,10 +7,18 @@ module MenuCommander
     # :nocov: - covered by external process
     attr_reader :paths, :config
 
-    def initialize(message = nil, paths: nil, config: nil)
+    def initialize(message=nil, paths: nil, config: nil)
       message ||= "Could not find menu configuration file"
       @paths, @config = paths, config
       super message
+    end
+    # :nocov:
+  end
+
+  class ExitMenu < Interrupt
+    # :nocov:
+    def initialize(message=nil)
+      super (message || "> Exit")
     end
     # :nocov:
   end
