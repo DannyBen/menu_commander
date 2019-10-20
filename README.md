@@ -13,6 +13,7 @@ Easily create menus for any command line tool using simple YAML configuration.
 
 * [Installation](#installation)
 * [Usage](#usage)
+   * [Menu Navigation](#menu-navigation)
 * [Menu Configuration Features](#menu-configuration-features)
    * [Minimal menu requirements](#minimal-menu-requirements)
    * [Argument sub-menus](#argument-sub-menus)
@@ -67,8 +68,17 @@ $ menu
 $ menu some-other-file
 ```
 
-
 ![Demo](/demo/demo.gif)
+
+### Menu Navigation
+
+- When a menu or sub menu has more than 10 items, it will become paginated
+  and a search filter will be added.
+- Pressing <kbd>Home</kbd> from any nested menu will go back to the first 
+  menu.
+- Pressing <kbd>Page Up</kbd> from any nested menu will go back to the 
+  previous menu.
+
 
 
 Menu Configuration Features
