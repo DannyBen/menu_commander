@@ -22,4 +22,12 @@ module MenuCommander
     end
     # :nocov:
   end
+
+  class MenuNavigation < StandardError
+    attr_reader :menu
+
+    def initialize(menu)
+      @menu = menu
+    end
+  end
 end

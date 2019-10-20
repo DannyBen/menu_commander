@@ -16,7 +16,12 @@ module MenuCommander
       response = select menu
       response = combine_commands response if response.is_a? Array
 
+      history << menu
+
       response.is_a?(String) ? evaluate(response) : call(response)
+    rescue MenuNavigation => e
+      call e.menu
+
     end
 
     def header
@@ -24,6 +29,10 @@ module MenuCommander
     end
 
   private
+
+    def history
+      @history ||= []
+    end
 
     def combine_commands(command_array)
       command_array.map { |cmd| "(#{cmd})" }.join ' && ' 
@@ -72,8 +81,31 @@ module MenuCommander
     end
 
     def prompt
-      @prompt ||= TTY::Prompt.new
+      @prompt ||= prompt!
     end
+
+    def prompt!
+      result = TTY::Prompt.new
+      result.on(:keypress) { |event| handle_keypress event }
+      result
+    end
+
+    def handle_keypress(event)
+      case event.key.name
+      when :page_up
+        parent_menu = history.pop
+        raise MenuNavigation.new(parent_menu) if parent_menu
+
+      when :home
+        home_menu = history.first
+        if home_menu
+          @history = []
+          raise MenuNavigation.new(home_menu)
+        end
+
+      end
+    end
+
 
     def ask(title)
       prompt.ask "> #{title}:"

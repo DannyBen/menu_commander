@@ -10,6 +10,8 @@ module SpecMixin
       enter: '',
       down: "\e[B",
       up: "\e[A",
+      page_up: "\e[5~",
+      home: "\e[1~",
     }
   end
 
