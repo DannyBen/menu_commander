@@ -53,3 +53,11 @@
 - :cmd: 'long'
   :kbd: ["%{enter}"]
 
+# Test Home button
+- :cmd: 'nested-test'
+  :kbd: ["%{enter}", "%{enter}", "%{home}%{down}%{enter}"]
+
+# Test Page Up button
+- :cmd: 'nested-test'
+  :kbd: ["%{enter}", "%{page_up}%{down}%{enter}"]
+
