@@ -18,7 +18,7 @@ module MenuCommander
   class ExitMenu < Interrupt
     # :nocov:
     def initialize(message=nil)
-      super (message || "> Exit")
+      super (message || "Goodbye")
     end
     # :nocov:
   end

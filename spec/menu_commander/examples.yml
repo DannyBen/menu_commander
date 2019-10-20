@@ -8,7 +8,7 @@
 - :cmd: "minimal"
   :kbd: ['%{enter}']
 
-- :cmd: "basic"
+- :cmd: "basic.yml"
   :kbd: ['%{enter}']
 
 - :cmd: basic --dry
@@ -60,4 +60,10 @@
 # Test Page Up button
 - :cmd: 'nested-test'
   :kbd: ["%{enter}", "%{page_up}%{down}%{enter}"]
+
+- :cmd: 'basic --confirm'
+  :kbd: ["%{enter}", "%{enter}"]
+
+- :cmd: 'basic --confirm'
+  :kbd: ["%{enter}", "n"]
 

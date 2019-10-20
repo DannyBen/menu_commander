@@ -19,7 +19,7 @@ rescue MenuCommander::Exit => e
 rescue MenuCommander::MenuNotFound => e
   say! "#{e.message}"
   if e.paths and e.config
-    message = "Looked for !txtgrn!#{e.config}.yml!txtrst! in"
+    message = "Looked for !txtgrn!#{e.config}!txtrst! in"
     if e.paths.size == 1
       message += " !txtgrn!#{e.paths.first}"
       say! message
