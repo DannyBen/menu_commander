@@ -4,11 +4,12 @@ module MenuCommander
   class Command < MisterBin::Command
     help "Menu Commander"
 
-    usage "menu [CONFIG --dry --loop]"
+    usage "menu [CONFIG --dry --loop --confirm]"
     usage "menu (-h|--help|--version)"
 
     option "-d --dry", "Dry run - do not execute the command at the end, just show it"
     option "-l --loop", "Reopen the menu after executing the selected command"
+    option "-c --confirm", "Show the command before execution and ask for confirmation"
     option "--version", "Show version number"
 
     param "CONFIG", "The name of the menu config file without the .yml extension [default: menu]"
@@ -53,7 +54,10 @@ module MenuCommander
       command = menu.call
       @last_command = command
 
-      if args['--dry']
+      if args['--confirm']
+        say "$ !txtpur!#{command}".strip
+        system command if prompt.yes? "Execute?"
+      elsif args['--dry']
         say "$ !txtpur!#{command}".strip
       else
         system command
@@ -82,6 +86,10 @@ module MenuCommander
 
     def config
       config = args['CONFIG'] || 'menu'
+    end
+
+    def prompt
+      @prompt ||= TTY::Prompt.new
     end
   end
 end

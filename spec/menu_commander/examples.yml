@@ -1,63 +1,69 @@
 :tests:
-- :cmd: "basic --loop"
-  :kbd: ['%{enter}']
+# - :cmd: "basic --loop"
+#   :kbd: ['%{enter}']
 
-- :cmd: ''
-  :kbd: ["%{enter}", "in the bottle"]
+# - :cmd: ''
+#   :kbd: ["%{enter}", "in the bottle"]
 
-- :cmd: "minimal"
-  :kbd: ['%{enter}']
+# - :cmd: "minimal"
+#   :kbd: ['%{enter}']
 
-- :cmd: "basic"
-  :kbd: ['%{enter}']
+# - :cmd: "basic"
+#   :kbd: ['%{enter}']
 
-- :cmd: basic --dry
-  :kbd: ["%{enter}"]
+# - :cmd: basic --dry
+#   :kbd: ["%{enter}"]
 
-- :cmd: basic
-  :kbd: ["%{down}", "%{enter}", "%{enter}"]
+# - :cmd: basic
+#   :kbd: ["%{down}", "%{enter}", "%{enter}"]
 
-- :cmd: 'nested'
+# - :cmd: 'nested'
+#   :kbd: ["%{enter}", "%{enter}"]
+
+# - :cmd: 'nested'
+#   :kbd: ["%{enter}", "%{down}%{down}", "%{enter}%{enter}"]
+
+# - :cmd: 'args-array'
+#   :kbd: ["%{enter}", "%{enter}"]
+
+# - :cmd: 'args-hash'
+#   :kbd: ["%{enter}", "%{enter}"]
+
+# - :cmd: 'args-free-text'
+#   :kbd: ["%{enter}", "1.2.3"]
+
+# - :cmd: 'args-shell'
+#   :kbd: ["%{enter}", "%{enter}"]
+
+# - :cmd: 'args-static'
+#   :kbd: ["%{enter}"]
+
+# - :cmd: 'multiline'
+#   :kbd: ["%{enter}"]
+
+# - :cmd: 'multiline'
+#   :kbd: ["%{down}", "%{enter}"]
+
+# - :cmd: 'extend'
+#   :kbd: ["%{down}%{down}", "%{down}"]
+
+# - :cmd: 'header'
+#   :kbd: ["%{enter}"]
+
+# - :cmd: 'long'
+#   :kbd: ["%{enter}"]
+
+# # Test Home button
+# - :cmd: 'nested-test'
+#   :kbd: ["%{enter}", "%{enter}", "%{home}%{down}%{enter}"]
+
+# # Test Page Up button
+# - :cmd: 'nested-test'
+#   :kbd: ["%{enter}", "%{page_up}%{down}%{enter}"]
+
+- :cmd: 'basic --confirm'
   :kbd: ["%{enter}", "%{enter}"]
 
-- :cmd: 'nested'
-  :kbd: ["%{enter}", "%{down}%{down}", "%{enter}%{enter}"]
-
-- :cmd: 'args-array'
-  :kbd: ["%{enter}", "%{enter}"]
-
-- :cmd: 'args-hash'
-  :kbd: ["%{enter}", "%{enter}"]
-
-- :cmd: 'args-free-text'
-  :kbd: ["%{enter}", "1.2.3"]
-
-- :cmd: 'args-shell'
-  :kbd: ["%{enter}", "%{enter}"]
-
-- :cmd: 'args-static'
-  :kbd: ["%{enter}"]
-
-- :cmd: 'multiline'
-  :kbd: ["%{enter}"]
-
-- :cmd: 'multiline'
-  :kbd: ["%{down}", "%{enter}"]
-
-- :cmd: 'extend'
-  :kbd: ["%{down}%{down}", "%{down}"]
-
-- :cmd: 'header'
-  :kbd: ["%{enter}"]
-
-- :cmd: 'long'
-  :kbd: ["%{enter}"]
-
-# Test Home button
-- :cmd: 'nested-test'
-  :kbd: ["%{enter}", "%{enter}", "%{home}%{down}%{enter}"]
-
-# Test Page Up button
-- :cmd: 'nested-test'
-  :kbd: ["%{enter}", "%{page_up}%{down}%{enter}"]
+- :cmd: 'basic --confirm'
+  :kbd: ["%{enter}", "n"]
 
