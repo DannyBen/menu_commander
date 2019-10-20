@@ -12,7 +12,7 @@ module MenuCommander
     option "-c --confirm", "Show the command before execution and ask for confirmation"
     option "--version", "Show version number"
 
-    param "CONFIG", "The name of the menu config file without the .yml extension [default: menu]"
+    param "CONFIG", "The name of the menu config file with or without the .yml extension [default: menu]"
 
     example "menu --dry"
     example "menu production --loop"
@@ -70,7 +70,7 @@ module MenuCommander
 
     def menu_file!
       menu_paths.each do |dir|
-        file = "#{dir}/#{config}.yml"
+        file = "#{dir}/#{config}"
         return file if File.exist? file
       end
       nil
@@ -85,7 +85,9 @@ module MenuCommander
     end
 
     def config
-      config = args['CONFIG'] || 'menu'
+      result = args['CONFIG'] || 'menu'
+      result += ".yml" unless result.end_with?('.yml')
+      result
     end
 
     def prompt

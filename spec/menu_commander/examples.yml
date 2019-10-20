@@ -8,7 +8,7 @@
 - :cmd: "minimal"
   :kbd: ['%{enter}']
 
-- :cmd: "basic"
+- :cmd: "basic.yml"
   :kbd: ['%{enter}']
 
 - :cmd: basic --dry
