@@ -26,6 +26,10 @@ Easily create menus for any command line tool using simple YAML configuration.
 
 ---
 
+![Demo](/demo/cast.svg)
+
+---
+
 Installation
 --------------------------------------------------
 
@@ -67,8 +71,6 @@ $ menu
 # Start the menu with ./some-other-file.yml
 $ menu some-other-file
 ```
-
-![Demo](/demo/demo.gif)
 
 ### Menu Navigation
 
