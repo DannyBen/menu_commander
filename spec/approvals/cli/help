@@ -1,7 +1,7 @@
 Menu Commander
 
 Usage:
-  menu [CONFIG --dry --loop --confirm]
+  menu [CONFIG --loop (--dry|--confirm)]
   menu (-h|--help|--version)
 
 Options:
@@ -27,5 +27,5 @@ Parameters:
 
 Examples:
   menu --dry
-  menu production --loop
+  menu production --loop --confirm
   menu -ld

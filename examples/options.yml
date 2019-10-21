@@ -1,0 +1,35 @@
+# examples/options.yml
+
+# Optional menu configuration
+options:
+  # Show header text
+  header: Hello
+
+  # Marker to show as the suffix of items that have submenus
+  # Use false to disable
+  submenu_marker: " ..."
+
+  # Menu selection marker
+  select_marker: ">"
+
+  # Menu title marker
+  title_marker: "-"
+
+  # When a menu has more items than page_size, add pagiation
+  # Default 10
+  page_size: 2
+
+  # When to show search filter
+  # yes      = always show
+  # no       = never show
+  # auto     = show only when there aare more items than page_size (default)
+  # <number> = show only when there are more items than <number>
+  filter: yes
+
+menu:
+  say:
+    hello: echo hello
+    hey: echo hey
+    hi: echo hi
+
+  whoami: whoami

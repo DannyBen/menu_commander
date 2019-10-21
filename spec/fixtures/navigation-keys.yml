@@ -1,0 +1,6 @@
+menu:
+  one:
+    one_one: 
+      one_one_one: echo one_one_one
+
+  two: echo two
