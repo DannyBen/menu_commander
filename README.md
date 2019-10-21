@@ -309,7 +309,7 @@ options:
 
 ```
 
-> See: [examples/optons.yml](examples/options.yml)
+> See: [examples/options.yml](examples/options.yml)
 
 
 
