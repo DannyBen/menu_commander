@@ -16,7 +16,7 @@ module MenuCommander
         page_size: 10,
         select_marker: "⯈",
         submenu_marker: " ⯆",
-        title_marker: "◾",
+        title_marker: "▌", # ➤ ❚ ✚
       }
     end
 

@@ -1,7 +1,7 @@
-◾ (Use ↑/↓ arrow keys, press Enter to select)
+▌ (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ deploy
-  alternative◾ 
+  alternative▌ 
   deploy
-⯈ alternative◾ alternative
+⯈ alternative▌ alternative
 > stubbed: run tests && git commit -am "automatic commit" && git push
 

@@ -1,0 +1,12 @@
+menu:
+  Install Packages:
+    Install Docker: apt-get install docker
+    Install Docker Compose: apt-get install docker-compose
+  SSH:
+    Login: ssh %{server}
+    Command: ssh %{server} "%{command}"
+
+args:
+  server: 
+  - localhost
+  - example.com

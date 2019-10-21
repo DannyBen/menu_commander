@@ -1,18 +1,18 @@
-◾ (Use ↑/↓ arrow keys, press Enter to select)
+▌ (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ hello
   hi
-  ping◾ 
+  ping▌ 
   hello
 ⯈ hi
-  ping◾ 
+  ping▌ 
   hello
   hi
-⯈ ping◾ ping
-◾ server: (Use ↑/↓ arrow keys, press Enter to select)
+⯈ ping▌ ping
+▌ server: (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ example.com
   localhost
-  google.com◾ server: 
+  google.com▌ server: 
   example.com
 ⯈ localhost
-  google.com◾ server: localhost
+  google.com▌ server: localhost
 > stubbed: ping localhost

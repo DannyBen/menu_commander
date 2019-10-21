@@ -1,10 +1,10 @@
-◾ (Use ↑/↓ arrow keys, press Enter to select)
+▌ (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ one ⯆
-  two◾ one ⯆
-◾ (Use ↑/↓ arrow keys, press Enter to select)
-⯈ one_one ⯆◾ (Use ↑/↓ arrow keys, press Enter to select)
+  two▌ one ⯆
+▌ (Use ↑/↓ arrow keys, press Enter to select)
+⯈ one_one ⯆▌ (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ one ⯆
-  two◾ 
+  two▌ 
   one ⯆
-⯈ two◾ two
+⯈ two▌ two
 > stubbed: echo two
