@@ -11,6 +11,8 @@ module MenuCommander
     def default_options
       @default_options ||= {
         auto_select: true,
+        echo: false,
+        echo_marker: '✓',
         filter: 'auto',
         header: false,
         page_size: 10,

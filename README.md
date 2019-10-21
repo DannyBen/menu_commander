@@ -300,6 +300,13 @@ options:
   # When arg lists generate one item only it is auto-selected by default.
   # Set this to false to disable this behavior
   auto_select: false
+
+  # Show the command after execution
+  echo: true
+
+  # Marker to use when echoing the command
+  echo_marker: "==>"
+
 ```
 
 > See: [examples/optons.yml](examples/options.yml)

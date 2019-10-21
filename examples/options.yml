@@ -30,6 +30,12 @@ options:
   # Set this to false to disable this behavior
   auto_select: false
 
+  # Show the command after execution
+  echo: true
+
+  # Marker to use when echoing the command
+  echo_marker: "==>"
+
 menu:
   say:
     hello: echo hello

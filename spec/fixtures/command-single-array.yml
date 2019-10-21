@@ -1,0 +1,6 @@
+options:
+  echo: true
+
+menu:
+  hello:
+    - echo hello

@@ -36,7 +36,11 @@ module MenuCommander
     end
 
     def combine_commands(command_array)
-      command_array.map { |cmd| "(#{cmd})" }.join ' && ' 
+      if command_array.size == 1
+        command_array.first
+      else
+        command_array.map { |cmd| "(#{cmd})" }.join ' && '
+      end
     end
 
     def evaluate(response)

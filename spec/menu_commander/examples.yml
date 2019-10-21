@@ -85,3 +85,7 @@
 - :dir: spec/fixtures
   :cmd: 'options-filter-number'
   :kbd: ["%{enter}", "%{enter}"]
+
+- :dir: spec/fixtures
+  :cmd: 'command-single-array'
+  :kbd: ["%{enter}"]

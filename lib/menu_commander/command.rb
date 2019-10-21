@@ -45,9 +45,9 @@ module MenuCommander
     def run_looped_menu
       loop do
         run_menu
-        break if ENV['MENU_COMMANDER_ENV'] == 'test'
         say ""
         @menu = nil
+        break if ENV['MENU_COMMANDER_ENV'] == 'test'
       end
     end
 
@@ -55,14 +55,13 @@ module MenuCommander
       command = menu.call
       @last_command = command
 
-      if args['--confirm']
-        say "$ !txtpur!#{command}".strip
-        system command if prompt.yes? "Execute?"
-      elsif args['--dry']
-        say "$ !txtpur!#{command}".strip
-      else
-        system command
-      end
+      execute = args['--dry'] ? false : true
+      say "$ !txtpur!#{command}".strip if args['--confirm'] or args['--dry']
+
+      execute = prompt.yes?("Execute?") if args['--confirm']
+      system command if execute
+
+      say "!txtblu!#{menu.options.echo_marker} #{command}".strip if menu.options.echo
     end
 
     def menu_file

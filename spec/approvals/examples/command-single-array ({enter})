@@ -1,5 +1,4 @@
 ▌ (Use ↑/↓ arrow keys, press Enter to select)
-⯈ hello
-  hi▌ hello
+⯈ hello▌ hello
 > stubbed: echo hello
-
+✓ echo hello
