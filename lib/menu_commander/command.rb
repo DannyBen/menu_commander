@@ -45,8 +45,9 @@ module MenuCommander
     def run_looped_menu
       loop do
         run_menu
-        say ""
         break if ENV['MENU_COMMANDER_ENV'] == 'test'
+        say ""
+        @menu = nil
       end
     end
 

@@ -20,6 +20,7 @@ module MenuCommander
 
       response.is_a?(String) ? evaluate(response) : call(response)
     rescue MenuNavigation => e
+      puts "\n\n"
       call e.menu
 
     end
