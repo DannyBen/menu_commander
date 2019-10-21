@@ -78,6 +78,7 @@ $ menu some-other-file
   menu.
 - Pressing <kbd>Page Up</kbd> from any nested menu will go back to the 
   previous menu.
+- Pressing <kbd>Ctrl</kbd>+<kbd>C</kbd> will exit from the menu.
 
 
 
