@@ -70,9 +70,13 @@ module MenuCommander
     end
 
     def get_opts_type(opts)
-      return :free_text if !opts
-      return :static if opts.is_a? Array and opts.size == 1
-      :menu
+      if !opts
+        :free_text 
+      elsif options.auto_select and opts.is_a? Array and opts.size == 1
+        :static 
+      else
+        :menu
+      end
     end
 
     def get_opts(key)

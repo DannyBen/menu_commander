@@ -10,12 +10,13 @@ module MenuCommander
 
     def default_options
       @default_options ||= {
-        header: false,
-        submenu_marker: " ⯆",
-        select_marker: "⯈",
-        title_marker: "◾",
-        page_size: 10,
+        auto_select: true,
         filter: 'auto',
+        header: false,
+        page_size: 10,
+        select_marker: "⯈",
+        submenu_marker: " ⯆",
+        title_marker: "◾",
       }
     end
 
