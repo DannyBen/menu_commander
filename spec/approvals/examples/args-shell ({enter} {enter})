@@ -1,10 +1,10 @@
-◾ (Use ↑/↓ arrow keys, press Enter to select)
+▌ (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ show
-  edit◾ show
-◾ file: (Use ↑/↓ arrow keys, press Enter to select)
+  edit▌ show
+▌ file: (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ approvals
   fixtures
   menu_commander
   spec_helper.rb
-  spec_mixin.rb◾ file: approvals
+  spec_mixin.rb▌ file: approvals
 > stubbed: cat approvals

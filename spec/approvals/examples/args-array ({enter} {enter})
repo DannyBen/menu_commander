@@ -1,7 +1,7 @@
-◾ (Use ↑/↓ arrow keys, press Enter to select)
+▌ (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ server
-  test◾ server
-◾ environment: (Use ↑/↓ arrow keys, press Enter to select)
+  test▌ server
+▌ environment: (Use ↑/↓ arrow keys, press Enter to select)
 ⯈ staging
-  production◾ environment: staging
+  production▌ environment: staging
 > stubbed: rails server --env staging

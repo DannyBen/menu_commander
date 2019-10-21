@@ -1,5 +1,5 @@
-◾ (Use ↑/↓ arrow keys, press Enter to select)
-⯈ release◾ release
+▌ (Use ↑/↓ arrow keys, press Enter to select)
+⯈ release▌ release
 > version: > version: 1> version: 1.> version: 1.2> version: 1.2.> version: 1.2.3> version: 1.2.3
 > version: 1.2.3
 > stubbed: echo 1.2.3 > version.txt && git tag v1.2.3
