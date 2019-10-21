@@ -26,6 +26,10 @@ options:
   # <number> = show only when there are more items than <number>
   filter: yes
 
+  # When arg lists generate one item only it is auto-selected by default.
+  # Set this to false to disable this behavior
+  auto_select: false
+
 menu:
   say:
     hello: echo hello

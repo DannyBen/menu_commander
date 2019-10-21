@@ -65,6 +65,9 @@
 - :cmd: 'options'
   :kbd: ["%{enter}", "%{enter}"]
 
+- :cmd: 'disable-auto-select'
+  :kbd: ["%{enter}", "%{enter}"]
+
 # Fixtures
 
 - :dir: spec/fixtures
@@ -82,5 +85,3 @@
 - :dir: spec/fixtures
   :cmd: 'options-filter-number'
   :kbd: ["%{enter}", "%{enter}"]
-
-
