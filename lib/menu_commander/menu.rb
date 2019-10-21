@@ -138,8 +138,12 @@ module MenuCommander
     def select(choices, title=nil)
       title = title ? "#{options.title_marker} #{title}:" : options.title_marker
       choices = apply_suffix choices if options.submenu_marker
-      
-      prompt.select title, choices, symbols: { marker: options.select_marker }, 
+      select! choices, title
+    end
+
+    def select!(choices, title)      
+      prompt.select title, choices, 
+        symbols: { marker: options.select_marker }, 
         per_page: options.page_size, 
         filter: enable_filter?(choices)
 
