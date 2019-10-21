@@ -1,9 +1,0 @@
-# examples/nested-test.yml
-
-# This file is used for testing the Home / Page Up buttons
-menu:
-  one:
-    one_one: 
-      one_one_one: echo one_one_one
-
-  two: echo two

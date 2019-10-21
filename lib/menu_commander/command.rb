@@ -4,7 +4,7 @@ module MenuCommander
   class Command < MisterBin::Command
     help "Menu Commander"
 
-    usage "menu [CONFIG --dry --loop --confirm]"
+    usage "menu [CONFIG --loop (--dry|--confirm)]"
     usage "menu (-h|--help|--version)"
 
     option "-d --dry", "Dry run - do not execute the command at the end, just show it"
@@ -15,14 +15,14 @@ module MenuCommander
     param "CONFIG", "The name of the menu config file with or without the .yml extension [default: menu]"
 
     example "menu --dry"
-    example "menu production --loop"
+    example "menu production --loop --confirm"
     example "menu -ld"
 
     attr_reader :last_command
 
     def run
       verify_sanity
-      say "#{menu.header}\n" if menu.header
+      say "#{menu.options.header}\n" if menu.options.header
 
       if args['--loop']
         run_looped_menu

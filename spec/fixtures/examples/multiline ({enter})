@@ -1,4 +1,0 @@
-> (Use ↑/↓ arrow keys, press Enter to select)
-> deploy
-  alternative> deploy
-> stubbed: (run tests) && (git commit -am "automatic commit") && (git push)

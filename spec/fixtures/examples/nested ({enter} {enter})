@@ -1,8 +1,0 @@
-> (Use ↑/↓ arrow keys, press Enter to select)
-> docker
-  git> docker
-> (Use ↑/↓ arrow keys, press Enter to select)
-> images
-  containers
-  stack> images
-> stubbed: docker images ls

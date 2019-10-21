@@ -1,0 +1,17 @@
+◾ (Use ↑/↓ arrow keys, press Enter to select)
+⯈ docker ⯆
+  git ⯆◾ docker ⯆
+◾ (Use ↑/↓ arrow keys, press Enter to select)
+⯈ images
+  containers
+  stack ⯆◾ 
+  images
+⯈ containers
+  stack ⯆◾ 
+  images
+  containers
+⯈ stack ⯆◾ stack ⯆
+◾ (Use ↑/↓ arrow keys, press Enter to select)
+⯈ deploy
+  list◾ deploy
+> stubbed: docker stack deploy -c docker-compose.yml mystack

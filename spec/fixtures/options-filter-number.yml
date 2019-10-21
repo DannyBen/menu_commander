@@ -1,0 +1,10 @@
+options:
+  filter: 1
+
+menu:
+  say:
+    hello: echo hello
+    hey: echo hey
+    hi: echo hi
+
+  whoami: whoami

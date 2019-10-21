@@ -6,9 +6,11 @@ describe 'examples' do
 
   it "work" do
     tests = YAML.load_file('spec/menu_commander/examples.yml')[:tests]
-    Dir.chdir 'examples' do
-      tests.each do |spec|
+    tests.each do |spec|
 
+      dir = spec[:dir] || 'examples'
+
+      Dir.chdir dir do
         command = spec[:cmd]
         keyboard = spec[:kbd] || []
 
@@ -30,5 +32,6 @@ describe 'examples' do
         expect(output).to match_fixture "examples/#{fixture}"
       end
     end
+
   end  
 end

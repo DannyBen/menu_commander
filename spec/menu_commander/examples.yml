@@ -56,17 +56,31 @@
 - :cmd: 'long'
   :kbd: ["%{enter}"]
 
-# Test Home button
-- :cmd: 'nested-test'
-  :kbd: ["%{enter}", "%{enter}", "%{home}%{down}%{enter}"]
-
-# Test Page Up button
-- :cmd: 'nested-test'
-  :kbd: ["%{enter}", "%{page_up}%{down}%{enter}"]
-
 - :cmd: 'basic --confirm'
   :kbd: ["%{enter}", "%{enter}"]
 
 - :cmd: 'basic --confirm'
   :kbd: ["%{enter}", "n"]
+
+- :cmd: 'options'
+  :kbd: ["%{enter}", "%{enter}"]
+
+# Fixtures
+
+- :dir: spec/fixtures
+  :cmd: 'navigation-keys'
+  :kbd: ["%{enter}", "%{enter}", "%{home}%{down}%{enter}"]
+
+- :dir: spec/fixtures
+  :cmd: 'navigation-keys'
+  :kbd: ["%{enter}", "%{page_up}%{down}%{enter}"]
+
+- :dir: spec/fixtures
+  :cmd: 'options-filter-false'
+  :kbd: ["%{enter}", "%{enter}"]
+
+- :dir: spec/fixtures
+  :cmd: 'options-filter-number'
+  :kbd: ["%{enter}", "%{enter}"]
+
 

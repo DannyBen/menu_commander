@@ -1,0 +1,7 @@
+◾ (Use ↑/↓ arrow keys, press Enter to select)
+⯈ hello
+  hi◾ hello
+$ echo hello
+Execute? (Y/n) Execute? (Y/n) 
+Execute? Yes
+> stubbed: echo hello

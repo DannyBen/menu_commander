@@ -24,8 +24,8 @@ module MenuCommander
 
     end
 
-    def header
-      config['header']
+    def options
+      @options ||= MenuOptions.new(config['options'])
     end
 
   private
@@ -106,7 +106,6 @@ module MenuCommander
       end
     end
 
-
     def ask(title)
       prompt.ask "> #{title}:"
 
@@ -117,10 +116,36 @@ module MenuCommander
 
     end
 
-    def select(options, title=nil)
-      title = title ? "> #{title}:" : ">"
-      enable_filter = options.size > 10
-      prompt.select title, options, symbols: { marker: '>' }, per_page: 10, filter: enable_filter
+    def apply_suffix(choices)
+      choices.map do |key, value|
+        key = "#{key}#{options.submenu_marker}" if value.is_a? Hash
+        [key, value]
+      end.to_h
+    end
+
+    def enable_filter?(choices)
+      if options.filter === true
+        true
+      elsif options.filter === false
+        false
+      elsif options.filter.is_a? Numeric
+        choices.size > options.filter
+      else
+        choices.size > options.page_size
+      end
+    end
+
+    def select(choices, title=nil)
+      title = title ? "#{options.title_marker} #{title}:" : options.title_marker
+      choices = apply_suffix choices if options.submenu_marker
+      select! choices, title
+    end
+
+    def select!(choices, title)      
+      prompt.select title, choices, 
+        symbols: { marker: options.select_marker }, 
+        per_page: options.page_size, 
+        filter: enable_filter?(choices)
 
     rescue TTY::Reader::InputInterrupt
       # :nocov:
