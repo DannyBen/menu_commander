@@ -1,4 +1,4 @@
-# examples/disable-auto-select
+# examples/disable-auto-select.yml
 
 options:
   auto_select: false
