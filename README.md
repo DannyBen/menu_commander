@@ -14,14 +14,14 @@ Easily create menus for any command line tool using simple YAML configuration.
 * [Installation](#installation)
 * [Usage](#usage)
    * [Menu Navigation](#menu-navigation)
-* [Menu Configuration Features](#menu-configuration-features)
+* [Defining Menus](#defining-menus)
    * [Minimal menu requirements](#minimal-menu-requirements)
    * [Argument sub-menus](#argument-sub-menus)
    * [Free text input](#free-text-input)
    * [Nested menus](#nested-menus)
-   * [Header text](#header-text)
    * [Split menu into several files](#split-menu-into-several-files)
    * [Multi-line commands](#multi-line-commands)
+* [Menu Configuration](#menu-configuration)
 * [Menu File Location](#menu-file-location)
 
 ---
@@ -81,7 +81,7 @@ $ menu some-other-file
 
 
 
-Menu Configuration Features
+Defining Menus
 --------------------------------------------------
 
 All features have an example configuration in the
@@ -199,20 +199,6 @@ menu:
 > See: [examples/args-nested.yml](examples/args-nested.yml)
 
 
-### Header text
-
-Use the `header` option to display a sentence or a multi-line paragraph when
-the menu is started. The header string supports [colsole color markers][1]:
-
-```yaml
-header: |-
-  Welcome to this !txtgrn!basic menu
-  !bldred!Multiline!txtrst! headers are allowed
-```
-
-> See: [examples/header.yml](examples/header.yml)
-
-
 ### Split menu into several files
 
 Each menu configuration file can include any number of additional YAML
@@ -274,6 +260,47 @@ menu:
 ```
 
 > See: [examples/multiline.yml](examples/multiline.yml)
+
+
+Menu Configuration
+--------------------------------------------------
+
+You can tweak several aspects of the menu by adding an `options` section
+in your YAML file.
+
+```yaml
+options:
+  # Show header text
+  header: Hello
+
+  # Marker to show as the suffix of items that have submenus
+  # Use false to disable
+  submenu_marker: " ..."
+
+  # Menu selection marker
+  select_marker: ">"
+
+  # Menu title marker
+  title_marker: "-"
+
+  # When a menu has more items than page_size, add pagiation
+  # Default 10
+  page_size: 2
+
+  # When to show search filter
+  # yes      = always show
+  # no       = never show
+  # auto     = show only when there aare more items than page_size (default)
+  # <number> = show only when there are more items than <number>
+  filter: yes
+
+  # When arg lists generate one item only it is auto-selected by default.
+  # Set this to false to disable this behavior
+  auto_select: false
+```
+
+> See: [examples/optons.yml](examples/options.yml)
+
 
 
 Menu File Location
