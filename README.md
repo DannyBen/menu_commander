@@ -14,14 +14,14 @@ Easily create menus for any command line tool using simple YAML configuration.
 * [Installation](#installation)
 * [Usage](#usage)
    * [Menu Navigation](#menu-navigation)
-* [Defining Menus](#defining-menus)
+* [Menu Definition](#menu-definition)
    * [Minimal menu requirements](#minimal-menu-requirements)
    * [Argument sub-menus](#argument-sub-menus)
    * [Free text input](#free-text-input)
    * [Nested menus](#nested-menus)
    * [Split menu into several files](#split-menu-into-several-files)
    * [Multi-line commands](#multi-line-commands)
-* [Menu Configuration](#menu-configuration)
+* [Menu Options](#menu-options)
 * [Menu File Location](#menu-file-location)
 
 ---
@@ -81,7 +81,7 @@ $ menu some-other-file
 
 
 
-Defining Menus
+Menu Definition
 --------------------------------------------------
 
 All features have an example configuration in the
@@ -262,7 +262,7 @@ menu:
 > See: [examples/multiline.yml](examples/multiline.yml)
 
 
-Menu Configuration
+Menu Options
 --------------------------------------------------
 
 You can tweak several aspects of the menu by adding an `options` section
