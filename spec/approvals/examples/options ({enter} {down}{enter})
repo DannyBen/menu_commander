@@ -5,6 +5,8 @@ Hello
   whoami- say ...
 - (Use ↑/↓ and ←/→ arrow keys, press Enter to select, and letter keys to filter)
 > hello
-  error- hello
-> stubbed: echo hello
-==> echo hello
+  error- 
+> error
+  hey- error
+> stubbed: simulate-error
+ERROR ==> simulate-error

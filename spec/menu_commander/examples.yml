@@ -65,6 +65,9 @@
 - :cmd: 'options'
   :kbd: ["%{enter}", "%{enter}"]
 
+- :cmd: 'options'
+  :kbd: ["%{enter}", "%{down}%{enter}"]
+
 - :cmd: 'disable-auto-select'
   :kbd: ["%{enter}", "%{enter}"]
 

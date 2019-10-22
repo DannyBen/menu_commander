@@ -33,12 +33,16 @@ options:
   # Show the command after execution
   echo: true
 
-  # Marker to use when echoing the command
-  echo_marker: "==>"
+  # Marker to use when echoing the command and it was successful
+  echo_marker_success: "==>"
+
+  # Marker to use when echoing the command and it failed
+  echo_marker_error: "ERROR ==>"
 
 menu:
   say:
     hello: echo hello
+    error: simulate-error
     hey: echo hey
     hi: echo hi
 

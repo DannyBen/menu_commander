@@ -23,19 +23,22 @@ module MenuCommander
     def run
       verify_sanity
       say "#{menu.options.header}\n" if menu.options.header
+      success = true
 
       if args['--loop']
         run_looped_menu
       else
-        run_menu
+        success = run_menu
       end
+
+      success ? 0 : 1
     end
+
+  private
 
     def menu
       @menu ||= Menu.new menu_file
     end
-
-  private
 
     def verify_sanity
       raise Exit, VERSION if args['--version'] 
@@ -59,9 +62,22 @@ module MenuCommander
       say "$ !txtpur!#{command}".strip if args['--confirm'] or args['--dry']
 
       execute = prompt.yes?("Execute?") if args['--confirm']
-      system command if execute
+      success = execute ? system(command) : false
 
-      say "!txtblu!#{menu.options.echo_marker} #{command}".strip if menu.options.echo
+      echo_footer success, command if menu.options.echo
+      success
+    end
+
+    def echo_footer(success, command)
+      if success
+        marker = menu.options.echo_marker_success
+        color = :txtblu
+      else
+        marker = menu.options.echo_marker_error
+        color = :txtred
+      end
+
+      say "!#{color}!#{marker} #{command}".strip
     end
 
     def menu_file
