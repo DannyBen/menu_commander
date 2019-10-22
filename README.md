@@ -272,6 +272,7 @@ You can tweak several aspects of the menu by adding an `options` section
 in your YAML file.
 
 ```yaml
+# Optional menu configuration
 options:
   # Show header text
   header: Hello
@@ -304,8 +305,11 @@ options:
   # Show the command after execution
   echo: true
 
-  # Marker to use when echoing the command
-  echo_marker: "==>"
+  # Marker to use when echoing the command and it was successful
+  echo_marker_success: "==>"
+
+  # Marker to use when echoing the command and it failed
+  echo_marker_error: "ERROR ==>"
 
 ```
 

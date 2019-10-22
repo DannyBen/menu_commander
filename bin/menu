@@ -8,8 +8,10 @@ router = MenuCommander::CLI.router
 begin
   exit router.run ARGV
 
-rescue MenuCommander::Interrupt => e
-  say! "\n#{e.message}"
+rescue MenuCommander::Interrupt, Interrupt => e
+  message = e.message
+  message = 'Interrupted... Goodbye' if message.empty?
+  say! "\n#{message}"
   exit 0
 
 rescue MenuCommander::Exit => e

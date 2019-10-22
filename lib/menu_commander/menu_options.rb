@@ -12,7 +12,8 @@ module MenuCommander
       @default_options ||= {
         auto_select: true,
         echo: false,
-        echo_marker: '✓',
+        echo_marker_success: '✓',
+        echo_marker_error: '✗',
         filter: 'auto',
         header: false,
         page_size: 10,

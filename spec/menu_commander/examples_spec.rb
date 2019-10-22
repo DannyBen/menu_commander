@@ -23,6 +23,7 @@ describe 'examples' do
 
         allow_any_instance_of(Command).to receive(:system) do |obj|
           say "!txtred!> stubbed!txtrst!: #{obj.last_command}"
+          obj.last_command == 'simulate-error' ? false : true
         end
 
         argv = command.split ' '
