@@ -64,11 +64,11 @@ module MenuCommander
       execute = prompt.yes?("Execute?") if args['--confirm']
       success = execute ? system(command) : false
 
-      echo_footer success if menu.options.echo
+      echo_footer success, command if menu.options.echo
       success
     end
 
-    def echo_footer(success)
+    def echo_footer(success, command)
       if success
         marker = menu.options.echo_marker_success
         color = :txtblu
