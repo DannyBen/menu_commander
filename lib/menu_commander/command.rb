@@ -62,17 +62,22 @@ module MenuCommander
       say "$ !txtpur!#{command}".strip if args['--confirm'] or args['--dry']
 
       execute = prompt.yes?("Execute?") if args['--confirm']
-      success = system command if execute
+      success = execute ? system(command) : false
 
-      if menu.options.echo
-        if success
-          say "!txtblu!#{menu.options.echo_marker_success} #{command}".strip
-        else
-          say "!txtred!#{menu.options.echo_marker_error} #{command}".strip
-        end
+      echo_footer success if menu.options.echo
+      success
+    end
+
+    def echo_footer(success)
+      if success
+        marker = menu.options.echo_marker_success
+        color = :txtblu
+      else
+        marker = menu.options.echo_marker_error
+        color = :txtred
       end
 
-      success
+      say "!#{color}!#{marker} #{command}".strip
     end
 
     def menu_file
