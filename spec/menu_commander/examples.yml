@@ -48,7 +48,7 @@
   :kbd: ["%{down}", "%{enter}"]
 
 - :cmd: 'extend'
-  :kbd: ["%{down}%{down}", "%{down}"]
+  :kbd: ["%{enter}", "%{enter}"]
 
 - :cmd: 'header'
   :kbd: ["%{enter}"]
