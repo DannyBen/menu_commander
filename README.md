@@ -2,7 +2,7 @@ Menu Commander
 ==================================================
 
 [![Gem Version](https://badge.fury.io/rb/menu_commander.svg)](https://badge.fury.io/rb/menu_commander)
-[![Build Status](https://travis-ci.com/DannyBen/menu_commander.svg?branch=master)](https://travis-ci.com/DannyBen/menu_commander)
+[![Build Status](https://github.com/DannyBen/menu_commander/workflows/Test/badge.svg)](https://github.com/DannyBen/menu_commander/actions?query=workflow%3ATest)
 [![Maintainability](https://api.codeclimate.com/v1/badges/aa048e0f2cf1655261ac/maintainability)](https://codeclimate.com/github/DannyBen/menu_commander/maintainability)
 
 ---
