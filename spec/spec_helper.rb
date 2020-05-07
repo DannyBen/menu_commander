@@ -17,5 +17,9 @@ RSpec.configure do |config|
   config.fixtures_path = File.expand_path 'approvals', __dir__  
 end
 
-ENV['TTY'] = 'on'
 ENV['MENU_COMMANDER_ENV'] = 'test'
+
+# Consistent Colsole output (for rspec_fixtures)
+ENV['TTY'] = 'on'
+ENV['COLUMNS'] = '80'
+ENV['LINES'] = '30'
