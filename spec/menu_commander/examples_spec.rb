@@ -30,7 +30,7 @@ describe 'examples' do
         output = interactive *keyboard do
           subject.run argv
         end
-        expect(output).to match_fixture "examples/#{fixture}"
+        expect(output).to match_approval "examples/#{fixture}"
       end
     end
 

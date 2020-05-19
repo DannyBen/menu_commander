@@ -14,7 +14,6 @@ RSpec.configure do |config|
   config.include SpecMixin
   config.include Colsole
   config.strip_ansi_escape = true
-  config.fixtures_path = File.expand_path 'approvals', __dir__  
 end
 
 ENV['MENU_COMMANDER_ENV'] = 'test'
