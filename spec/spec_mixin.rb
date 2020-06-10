@@ -4,7 +4,6 @@ class StringIO
   end
 
   # ref: https://github.com/piotrmurach/tty-screen/issues/11
-  
   def ioctl(*)
     80
   end
