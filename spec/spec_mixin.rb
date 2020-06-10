@@ -2,6 +2,12 @@ class StringIO
   def wait_readable(*)
     true
   end
+
+  # ref: https://github.com/piotrmurach/tty-screen/issues/11
+  
+  def ioctl(*)
+    80
+  end
 end
 
 module SpecMixin
