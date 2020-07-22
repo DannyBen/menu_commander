@@ -1,9 +1,9 @@
-▌ (Use ↑/↓ arrow keys, press Enter to select)
+▌ (Press ↑/↓ arrow to move and Enter to select)
 ⯈ hello
   hi▌ 
   hello
 ⯈ hi▌ hi
-▌ name: (Use ↑/↓ arrow keys, press Enter to select)
+▌ name: (Press ↑/↓ arrow to move and Enter to select)
 ⯈ Harry
   Lloyd▌ name: Harry
 > stubbed: echo hi Harry

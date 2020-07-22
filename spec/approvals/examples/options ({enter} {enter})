@@ -1,9 +1,9 @@
 Hello
 
-- (Use ↑/↓ arrow keys, press Enter to select, and letter keys to filter)
+- (Press ↑/↓ arrow to move, Enter to select and letters to filter)
 > say ...
   whoami- say ...
-- (Use ↑/↓ and ←/→ arrow keys, press Enter to select, and letter keys to filter)
+- (Press ↑/↓/←/→ arrow to move, Enter to select and letters to filter)
 > hello
   error- hello
 > stubbed: echo hello

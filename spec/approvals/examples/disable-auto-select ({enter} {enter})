@@ -1,5 +1,5 @@
-▌ (Use ↑/↓ arrow keys, press Enter to select)
+▌ (Press ↑/↓ arrow to move and Enter to select)
 ⯈ greet▌ greet
-▌ name: (Use ↑/↓ arrow keys, press Enter to select)
+▌ name: (Press ↑/↓ arrow to move and Enter to select)
 ⯈ Bob▌ name: Bob
 > stubbed: echo Hello Bob
