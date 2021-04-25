@@ -1,6 +1,12 @@
 Change Log
 ========================================
 
+v0.2.6 - 2021-04-25
+----------------------------------------
+
+- Fix tty-prompt 0.23.1 breaking change
+
+
 ## [v0.2.4](https://github.com/DannyBen/menu_commander/tree/v0.2.4) (2020-01-26)
 
 [Full Changelog](https://github.com/DannyBen/menu_commander/compare/v0.2.3...v0.2.4)
