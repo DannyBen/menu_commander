@@ -145,7 +145,7 @@ module MenuCommander
 
     def select(choices, title=nil)
       title = title ? "#{options.title_marker} #{title}:" : options.title_marker
-      choices = apply_suffix choices if options.submenu_marker
+      choices = apply_suffix choices if options.submenu_marker and choices.is_a? Hash
       select! choices, title
     end
 

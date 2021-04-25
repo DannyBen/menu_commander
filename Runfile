@@ -31,3 +31,5 @@ action :changelog do
   # append older changelog (prior to switching to git-changelog)
   run "cat .changelog.old.md >> CHANGELOG.md"
 end
+
+require './debug.rb' if File.exist? 'debug.rb'
