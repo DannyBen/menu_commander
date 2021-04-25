@@ -11,6 +11,5 @@ gem 'runfile'
 gem 'runfile-tasks'
 gem 'simplecov'
 gem 'yard'
-gem 'github_changelog_generator'
 
 gemspec

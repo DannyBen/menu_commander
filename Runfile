@@ -25,7 +25,9 @@ action :toc do
   run! 'gh-md-toc README.md > toc.txt'
 end
 
-help   "Generate changelog"
+help   "Generate changelog and append old changelog"
 action :changelog do
-  run 'github_changelog_generator --user DannyBen --project menu_commander'
+  run "git changelog --save"
+  # append older changelog (prior to switching to git-changelog)
+  run "cat .changelog.old.md >> CHANGELOG.md"
 end
