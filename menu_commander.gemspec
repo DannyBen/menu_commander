@@ -15,10 +15,10 @@ Gem::Specification.new do |s|
   s.executables = ['menu']
   s.homepage    = 'https://github.com/dannyben/menu_commander'
   s.license     = 'MIT'
-  s.required_ruby_version = ">= 2.3.0"
+  s.required_ruby_version = ">= 2.6.0"
 
-  s.add_runtime_dependency 'mister_bin', '~> 0.3'
-  s.add_runtime_dependency 'colsole', '~> 0.5'
+  s.add_runtime_dependency 'mister_bin', '~> 0.7'
+  s.add_runtime_dependency 'colsole', '~> 0.7'
   s.add_runtime_dependency 'tty-prompt', '~> 0.23.1'
-  s.add_runtime_dependency 'extended_yaml', '~> 0.1'
+  s.add_runtime_dependency 'extended_yaml', '~> 0.2'
 end
