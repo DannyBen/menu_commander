@@ -10,7 +10,7 @@ module MenuCommander
       @config = config
     end
 
-    def call(menu=nil)
+    def call(menu = nil)
       menu ||= config['menu']
       response = select menu
       response = combine_commands response if response.is_a? Array
@@ -21,7 +21,6 @@ module MenuCommander
     rescue MenuNavigation => e
       puts "\n\n"
       call e.menu
-
     end
 
     def options
@@ -75,9 +74,9 @@ module MenuCommander
 
     def get_opts_type(opts)
       if !opts
-        :free_text 
-      elsif options.auto_select and opts.is_a? Array and opts.size == 1
-        :static 
+        :free_text
+      elsif options.auto_select && opts.is_a?(Array) && (opts.size == 1)
+        :static
       else
         :menu
       end
@@ -102,13 +101,13 @@ module MenuCommander
       case event.key.name
       when :page_up
         parent_menu = history.pop
-        raise MenuNavigation.new(parent_menu) if parent_menu
+        raise MenuNavigation, parent_menu if parent_menu
 
       when :home
         home_menu = history.first
         if home_menu
           @history = []
-          raise MenuNavigation.new(home_menu)
+          raise MenuNavigation, home_menu
         end
 
       end
@@ -116,50 +115,44 @@ module MenuCommander
 
     def ask(title)
       prompt.ask "> #{title}:"
-
     rescue TTY::Reader::InputInterrupt
       # :nocov:
       raise ExitMenu
       # :nocov:
-
     end
 
     def apply_suffix(choices)
-      choices.map do |key, value|
+      choices.to_h do |key, value|
         key = "#{key}#{options.submenu_marker}" if value.is_a? Hash
         [key, value]
-      end.to_h
+      end
     end
 
     def enable_filter?(choices)
-      if options.filter === true
-        true
-      elsif options.filter === false
-        false
-      elsif options.filter.is_a? Numeric
-        choices.size > options.filter
+      case options.filter
+      when true then true
+      when false then false
+      when Numeric then choices.size > options.filter
       else
         choices.size > options.page_size
       end
     end
 
-    def select(choices, title=nil)
+    def select(choices, title = nil)
       title = title ? "#{options.title_marker} #{title}:" : options.title_marker
-      choices = apply_suffix choices if options.submenu_marker and choices.is_a? Hash
+      choices = apply_suffix choices if options.submenu_marker && choices.is_a?(Hash)
       select! choices, title
     end
 
-    def select!(choices, title)      
-      prompt.select title, choices, 
-        symbols: { marker: options.select_marker }, 
-        per_page: options.page_size, 
-        filter: enable_filter?(choices)
-
+    def select!(choices, title)
+      prompt.select title, choices,
+        symbols:  { marker: options.select_marker },
+        per_page: options.page_size,
+        filter:   enable_filter?(choices)
     rescue TTY::Reader::InputInterrupt
       # :nocov:
       raise ExitMenu
       # :nocov:
-
     end
   end
 end

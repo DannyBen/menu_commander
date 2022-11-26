@@ -4,10 +4,9 @@ require 'yaml'
 describe 'examples' do
   subject { CLI.router }
 
-  it "work" do
+  it 'work' do
     tests = YAML.load_file('spec/menu_commander/examples.yml')[:tests]
     tests.each do |spec|
-
       dir = spec[:dir] || 'examples'
 
       Dir.chdir dir do
@@ -15,24 +14,23 @@ describe 'examples' do
         keyboard = spec[:kbd] || []
 
         test_name = "#{command} (#{keyboard.join ' '})"
-        test_name = "no-arguments" if test_name.empty?
+        test_name = 'no-arguments' if test_name.empty?
 
         say "$ !txtpur!menu #{test_name}"
 
-        fixture = test_name.gsub(/[^#\w\- \(\)\{\}\[\]]/, '').strip
+        fixture = test_name.gsub(/[^#\w\- (){}\[\]]/, '').strip
 
         allow_any_instance_of(Command).to receive(:system) do |obj|
           say "!txtred!> stubbed!txtrst!: #{obj.last_command}"
-          obj.last_command == 'simulate-error' ? false : true
+          obj.last_command != 'simulate-error'
         end
 
-        argv = command.split ' '
-        output = interactive *keyboard do
+        argv = command.split
+        output = interactive(*keyboard) do
           subject.run argv
         end
         expect(output).to match_approval "examples/#{fixture}"
       end
     end
-
-  end  
+  end
 end

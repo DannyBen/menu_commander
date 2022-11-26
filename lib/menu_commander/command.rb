@@ -2,21 +2,21 @@ require 'mister_bin'
 
 module MenuCommander
   class Command < MisterBin::Command
-    help "Menu Commander"
+    help 'Menu Commander'
 
-    usage "menu [CONFIG --loop (--dry|--confirm)]"
-    usage "menu (-h|--help|--version)"
+    usage 'menu [CONFIG --loop (--dry|--confirm)]'
+    usage 'menu (-h|--help|--version)'
 
-    option "-d --dry", "Dry run - do not execute the command at the end, just show it"
-    option "-l --loop", "Reopen the menu after executing the selected command"
-    option "-c --confirm", "Show the command before execution and ask for confirmation"
-    option "--version", "Show version number"
+    option '-d --dry', 'Dry run - do not execute the command at the end, just show it'
+    option '-l --loop', 'Reopen the menu after executing the selected command'
+    option '-c --confirm', 'Show the command before execution and ask for confirmation'
+    option '--version', 'Show version number'
 
-    param "CONFIG", "The name of the menu config file with or without the .yml extension [default: menu]"
+    param 'CONFIG', 'The name of the menu config file with or without the .yml extension [default: menu]'
 
-    example "menu --dry"
-    example "menu production --loop --confirm"
-    example "menu -ld"
+    example 'menu --dry'
+    example 'menu production --loop --confirm'
+    example 'menu -ld'
 
     attr_reader :last_command
 
@@ -41,14 +41,14 @@ module MenuCommander
     end
 
     def verify_sanity
-      raise Exit, VERSION if args['--version'] 
+      raise Exit, VERSION if args['--version']
       raise MenuNotFound.new(paths: menu_paths, config: config) unless menu_file
     end
 
     def run_looped_menu
       loop do
         run_menu
-        say ""
+        say ''
         @menu = nil
         break if ENV['MENU_COMMANDER_ENV'] == 'test'
       end
@@ -59,9 +59,9 @@ module MenuCommander
       @last_command = command
 
       execute = args['--dry'] ? false : true
-      say "$ !txtpur!#{command}".strip if args['--confirm'] or args['--dry']
+      say "$ !txtpur!#{command}".strip if args['--confirm'] || args['--dry']
 
-      execute = prompt.yes?("Execute?") if args['--confirm']
+      execute = prompt.yes?('Execute?') if args['--confirm']
       success = execute ? system(command) : false
 
       echo_footer success, command if menu.options.echo
@@ -102,7 +102,7 @@ module MenuCommander
 
     def config
       result = args['CONFIG'] || 'menu'
-      result += ".yml" unless result.end_with?('.yml')
+      result += '.yml' unless result.end_with?('.yml')
       result
     end
 
