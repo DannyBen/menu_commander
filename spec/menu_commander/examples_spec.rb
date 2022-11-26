@@ -4,7 +4,7 @@ require 'yaml'
 describe 'examples' do
   subject { CLI.router }
 
-  it 'work' do
+  it 'executes successfully' do
     tests = YAML.load_file('spec/menu_commander/examples.yml')[:tests]
     tests.each do |spec|
       dir = spec[:dir] || 'examples'

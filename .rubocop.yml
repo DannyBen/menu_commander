@@ -15,3 +15,12 @@ AllCops:
     - 'spec/approvals/**/*'
     - 'dev/**/*'
 
+# FIXME: Allow longer example in this test code
+RSpec/ExampleLength:
+  Exclude:
+    - spec/menu_commander/examples_spec.rb
+
+# FIXME: Allow `*_any_instance_of` in this test code
+RSpec/AnyInstance:
+  Exclude:
+    - spec/menu_commander/examples_spec.rb
