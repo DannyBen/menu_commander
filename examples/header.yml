@@ -4,8 +4,8 @@
 # Colsole color markers are supported.
 options:
   header: |-
-    Welcome to this !txtgrn!basic menu
-    !bldred!Multiline!txtrst! headers are allowed
+    Welcome to this g`basic menu`
+    rb`Multiline` headers are allowed
 
 menu:
   hello: echo hello

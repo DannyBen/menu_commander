@@ -59,7 +59,7 @@ module MenuCommander
       @last_command = command
 
       execute = args['--dry'] ? false : true
-      say "$ !txtpur!#{command}".strip if args['--confirm'] || args['--dry']
+      say "$ m`#{command}`".strip if args['--confirm'] || args['--dry']
 
       execute = prompt.yes?('Execute?') if args['--confirm']
       success = execute ? system(command) : false
@@ -71,13 +71,13 @@ module MenuCommander
     def echo_footer(success, command)
       if success
         marker = menu.options.echo_marker_success
-        color = :txtblu
+        color = 'b'
       else
         marker = menu.options.echo_marker_error
-        color = :txtred
+        color = 'r'
       end
 
-      say "!#{color}!#{marker} #{command}".strip
+      say "#{color}`#{marker} #{command}`".strip
     end
 
     def menu_file

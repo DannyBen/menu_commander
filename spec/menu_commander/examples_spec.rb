@@ -16,12 +16,12 @@ describe 'examples' do
         test_name = "#{command} (#{keyboard.join ' '})"
         test_name = 'no-arguments' if test_name.empty?
 
-        say "$ !txtpur!menu #{test_name}"
+        say "$ m`menu #{test_name}`"
 
         fixture = test_name.gsub(/[^#\w\- (){}\[\]]/, '').strip
 
         allow_any_instance_of(Command).to receive(:system) do |obj|
-          say "!txtred!> stubbed!txtrst!: #{obj.last_command}"
+          say "r`> stubbed`: #{obj.last_command}"
           obj.last_command != 'simulate-error'
         end
 
