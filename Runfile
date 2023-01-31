@@ -1,29 +1,11 @@
-require "runfile-tasks"
 require "byebug"
-require_relative 'lib/menu_commander'
+require 'menu_commander/version'
 
 title   "MenuCommander Developer Toolbelt"
 summary "Runfile tasks for building the MenuCommander gem"
 version MenuCommander::VERSION
 
-RunfileTasks::RubyGems.all 'menu_commander'
-RunfileTasks::Testing.rspec
-RunfileTasks::Docs.rdoc
-
-help   "Run YARD server"
-action :yard do
-  system "yard server -p3000 -B0.0.0.0 -r"
-end
-
-help   "Run interactive console"
-action :console, :c do
-  system "bundle exec bin/console"
-end
-
-help   "Generate TOC to toc.txt"
-action :toc do
-  exec 'gh-md-toc README.md > toc.txt'
-end
+import_gem 'runfile-tasks/gem', gemname: 'menu_commander'
 
 help   "Generate changelog and append old changelog"
 action :changelog do
@@ -31,5 +13,3 @@ action :changelog do
   # append older changelog (prior to switching to git-changelog)
   system "cat .changelog.old.md >> CHANGELOG.md"
 end
-
-require './debug.rb' if File.exist? 'debug.rb'
