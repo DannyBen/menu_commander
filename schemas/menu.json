@@ -1,0 +1,179 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "definitions": {
+        "menu": {
+            "title": "menu",
+            "description": "A menu of the current application\nhttps://github.com/DannyBen/menu_commander#menu-definition",
+            "type": "object",
+            "patternProperties": {
+                ".": {
+                    "description": "A menu item of the current application\nhttps://github.com/DannyBen/menu_commander#menu-definition",
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "minLength": 1,
+                            "examples": [
+                                "rails server --env %{environment}"
+                            ]
+                        },
+                        {
+                            "$ref": "#/definitions/menu"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "title": "menu",
+    "description": "A menu of the current application\nhttps://github.com/DannyBen/menu_commander#menu-definition",
+    "type": "object",
+    "properties": {
+        "extends": {
+            "title": "extends",
+            "description": "A base menu\nhttps://github.com/DannyBen/menu_commander#split-menu-into-several-files",
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+                "extend-parent.yml"
+            ]
+        },
+        "options": {
+            "title": "options",
+            "description": "Options of the current menu\nhttps://github.com/DannyBen/menu_commander#menu-options",
+            "type": "object",
+            "properties": {
+                "header": {
+                    "title": "header",
+                    "description": "A header\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "string",
+                    "examples": [
+                        "Hello"
+                    ]
+                },
+                "submenu_marker": {
+                    "title": "submenu marker",
+                    "description": "A suffix of items with submenus\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "string",
+                    "examples": [
+                        " ..."
+                    ]
+                },
+                "select_marker": {
+                    "title": "select marker",
+                    "description": "A menu selection marker\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "string",
+                    "examples": [
+                        ">"
+                    ]
+                },
+                "title_marker": {
+                    "title": "title marker",
+                    "description": "A menu title marker\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "string",
+                    "examples": [
+                        "-"
+                    ]
+                },
+                "page_size": {
+                    "title": "page size",
+                    "description": "A pagination size\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "integer",
+                    "minimum": 0,
+                    "default": 10
+                },
+                "filter": {
+                    "title": "filter",
+                    "description": "A search filter show condition\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "enum": [
+                                "yes",
+                                "no",
+                                "auto"
+                            ]
+                        },
+                        {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    ],
+                    "default": "auto"
+                },
+                "auto_select": {
+                    "title": "auto select",
+                    "description": "Whether to select single item by default\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "boolean"
+                },
+                "echo": {
+                    "title": "echo",
+                    "description": "Whether to show a command after execution\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "boolean"
+                },
+                "echo_marker_success": {
+                    "title": "echo marker success",
+                    "description": "A successful execution marker\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "string",
+                    "examples": [
+                        "==>"
+                    ]
+                },
+                "echo_marker_error": {
+                    "title": "echo marker error",
+                    "description": "A failed execution marker\nhttps://github.com/DannyBen/menu_commander#menu-options",
+                    "type": "string",
+                    "examples": [
+                        "ERROR ==>"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "menu": {
+            "$ref": "#/definitions/menu"
+        },
+        "args": {
+            "title": "args",
+            "description": "Arguments for the current menu\nhttps://github.com/DannyBen/menu_commander#menu-definition",
+            "type": "object",
+            "patternProperties": {
+                ".": {
+                    "description": "An argument for the current menu\nhttps://github.com/DannyBen/menu_commander#menu-definition",
+                    "oneOf": [
+                        {
+                            "type": "string",
+                            "examples": [
+                                "ls ../spec"
+                            ]
+                        },
+                        {
+                            "type": "array",
+                            "minItems": 1,
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string",
+                                "examples": [
+                                    "staging"
+                                ]
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "patternProperties": {
+                                ".": {
+                                    "type": "string",
+                                    "examples": [
+                                        "staging"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}
