@@ -13,3 +13,13 @@ action :changelog do
   # append older changelog (prior to switching to git-changelog)
   system "cat .changelog.old.md >> CHANGELOG.md"
 end
+
+help   'Test the schema against all examples'
+action :schema do
+  Dir['examples/*.yml'].each do |file|
+    command = "check-jsonschema --schemafile schemas/menu.json #{file}"
+    say "\n$ check-jsonschema bb`#{file}`"
+    success = system command
+    abort 'Failed' unless success
+  end
+end
