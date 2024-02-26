@@ -23,7 +23,7 @@ module MenuCommander
       }
     end
 
-    def method_missing(method, *_args, &_block)
+    def method_missing(method, *_args, &)
       respond_to?(method) ? options[method] : super
     end
 

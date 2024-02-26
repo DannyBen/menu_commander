@@ -43,19 +43,19 @@ module SpecMixin
     end
   end
 
-  def interactive(*args, &block)
+  def interactive(...)
     if ENV['DEBUG'] == '2'
       # :nocov:
-      interactive!(*args, &block)
+      interactive!(...)
       # :nocov:
     else
-      capture_output { interactive!(*args, &block) }
+      capture_output { interactive!(...) }
     end
   end
 
-  def interactive!(*args, &block)
+  def interactive!(*args, &)
     if args.any?
-      stdin_send(*args, &block)
+      stdin_send(*args, &)
     else
       # :nocov:
       yield
