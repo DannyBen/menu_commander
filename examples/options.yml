@@ -22,7 +22,7 @@ options:
   # When to show search filter
   # yes      = always show
   # no       = never show
-  # auto     = show only when there aare more items than page_size (default)
+  # auto     = show only when there are more items than page_size (default)
   # <number> = show only when there are more items than <number>
   filter: yes
 

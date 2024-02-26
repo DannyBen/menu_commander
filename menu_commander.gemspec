@@ -14,12 +14,12 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/DannyBen/menu_commander'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 3.0'
+  s.required_ruby_version = '>= 3.1'
 
-  s.add_runtime_dependency 'colsole', '>= 0.8.1', '< 2'
-  s.add_runtime_dependency 'extended_yaml', '~> 0.2'
-  s.add_runtime_dependency 'mister_bin', '~> 0.7'
-  s.add_runtime_dependency 'tty-prompt', '~> 0.23'
+  s.add_dependency 'colsole', '~> 1.0'
+  s.add_dependency 'extended_yaml', '~> 0.2'
+  s.add_dependency 'mister_bin', '~> 0.7'
+  s.add_dependency 'tty-prompt', '~> 0.23'
 
   s.metadata = {
     'bug_tracker_uri'       => 'https://github.com/DannyBen/menu_commander/issues',

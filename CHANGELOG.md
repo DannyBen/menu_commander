@@ -1,6 +1,13 @@
 Change Log
 ========================================
 
+Untagged - Latest
+----------------------------------------
+
+- Drop support for Ruby 2.x
+- Drop support for Ruby 3.0
+
+
 v0.2.7 - 2023-01-31
 ----------------------------------------
 
@@ -14,6 +21,7 @@ v0.2.6 - 2021-04-25
 - Fix tty-prompt 0.23.1 breaking change
 
 
+<!-- break v0.2.4 -->
 ## [v0.2.4](https://github.com/DannyBen/menu_commander/tree/v0.2.4) (2020-01-26)
 
 [Full Changelog](https://github.com/DannyBen/menu_commander/compare/v0.2.3...v0.2.4)
@@ -131,4 +139,3 @@ v0.2.6 - 2021-04-25
 **Merged pull requests:**
 
 - Remove special treatment for single-item menus [\#1](https://github.com/DannyBen/menu_commander/pull/1) ([DannyBen](https://github.com/DannyBen))
-

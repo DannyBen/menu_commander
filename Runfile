@@ -1,4 +1,4 @@
-require "byebug"
+require 'debug'
 require 'menu_commander/version'
 
 title   "MenuCommander Developer Toolbelt"
@@ -6,13 +6,6 @@ summary "Runfile tasks for building the MenuCommander gem"
 version MenuCommander::VERSION
 
 import_gem 'runfile-tasks/gem', gemname: 'menu_commander'
-
-help   "Generate changelog and append old changelog"
-action :changelog do
-  system "git changelog --save"
-  # append older changelog (prior to switching to git-changelog)
-  system "cat .changelog.old.md >> CHANGELOG.md"
-end
 
 help   'Test the schema against all examples'
 action :schema do
