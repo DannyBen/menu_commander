@@ -11,21 +11,6 @@ Easily create menus for any command line tool using simple YAML configuration.
 
 ---
 
-* [Installation](#installation)
-* [Usage](#usage)
-   * [Menu Navigation](#menu-navigation)
-* [Menu Definition](#menu-definition)
-   * [Minimal menu requirements](#minimal-menu-requirements)
-   * [Argument sub-menus](#argument-sub-menus)
-   * [Free text input](#free-text-input)
-   * [Nested menus](#nested-menus)
-   * [Split menu into several files](#split-menu-into-several-files)
-   * [Multi-line commands](#multi-line-commands)
-* [Menu Options](#menu-options)
-* [Menu File Location](#menu-file-location)
-
----
-
 ![Demo](/demo/cast.svg)
 
 ---

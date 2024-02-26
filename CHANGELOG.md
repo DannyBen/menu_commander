@@ -5,6 +5,7 @@ Untagged - Latest
 ----------------------------------------
 
 - Drop support for Ruby 2.x
+- Drop support for Ruby 3.0
 
 
 v0.2.7 - 2023-01-31
