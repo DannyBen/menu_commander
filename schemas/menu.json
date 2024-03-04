@@ -1,6 +1,24 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "definitions": {
+        "invalid-variable-reference": {
+            "type": "string",
+            "pattern": "[%\\$]\\{\\s*\\}"
+        },
+        "invalid-command-substitution": {
+            "type": "string",
+            "pattern": "\\$\\(\\s*\\)"
+        },
+        "invalid-construct": {
+          "anyOf": [
+                {
+                    "$ref": "#/definitions/invalid-variable-reference"
+                },
+                {
+                    "$ref": "#/definitions/invalid-command-substitution"
+                }
+            ]
+        },
         "menu": {
             "title": "menu",
             "description": "A menu of the current application\nhttps://github.com/DannyBen/menu_commander#menu-definition",
@@ -12,6 +30,9 @@
                         {
                             "type": "string",
                             "minLength": 1,
+                            "not": {
+                                "$ref": "#/definitions/invalid-construct"
+                            },
                             "examples": [
                                 "rails server --env %{environment}"
                             ]
@@ -22,6 +43,9 @@
                             "items": {
                                 "type": "string",
                                 "minLength": 1,
+                                "not": {
+                                    "$ref": "#/definitions/invalid-construct"
+                                },
                                 "examples": [
                                     "rails server --env %{environment}"
                                 ]
@@ -45,6 +69,7 @@
             "description": "A base menu\nhttps://github.com/DannyBen/menu_commander#split-menu-into-several-files",
             "type": "string",
             "minLength": 1,
+            "pattern": "\\.ya?ml$",
             "examples": [
                 "extend-parent.yml"
             ]
