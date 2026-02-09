@@ -1,6 +1,8 @@
 Menu Commander
 ==================================================
 
+![repocard](https://repocard.dannyben.com/svg/menu_commander.svg)
+
 Easily create menus for any command line tool using simple YAML configuration.
 
 ---
