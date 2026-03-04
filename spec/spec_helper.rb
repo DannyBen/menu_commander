@@ -8,6 +8,7 @@ Bundler.require :default, :development
 require 'mister_bin'
 
 include MenuCommander
+
 require_relative 'spec_mixin'
 
 RSpec.configure do |config|
