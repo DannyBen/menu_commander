@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/DannyBen/menu_commander'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 3.1'
+  s.required_ruby_version = '>= 3.2'
 
   s.add_dependency 'colsole', '~> 1.0'
   s.add_dependency 'extended_yaml', '~> 0.2'
